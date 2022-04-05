@@ -11,13 +11,21 @@ config_version=4
 [application]
 
 config/name="Gas Rocket"
+run/main_scene="res://src/menu/MainMenu.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.352941, 0.352941, 0.352941, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 
+[autoload]
+
+PlayerData="*res://src/player/PlayerData.tscn"
+
 [display]
 
-window/size/width=1280
-window/size/height=800
+window/size/width=640
+window/size/height=400
 
 [importer_defaults]
 

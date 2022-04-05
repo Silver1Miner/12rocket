@@ -16,7 +16,9 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="Logout" parent="." instance=ExtResource( 2 )]
-margin_left = 1074.0
-margin_top = 602.0
-margin_right = 1138.0
-margin_bottom = 666.0
+margin_left = 533.0
+margin_top = 297.0
+margin_right = 565.0
+margin_bottom = 329.0
+
+[connection signal="icon_pressed" from="Logout" to="." method="_on_Logout_icon_pressed"]

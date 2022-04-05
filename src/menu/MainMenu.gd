@@ -8,7 +8,8 @@ func _ready() -> void:
 		quit_button.visible = false
 
 func _on_Start_pressed() -> void:
-	print("new game")
+	if get_tree().change_scene_to(PlayerData.world) != OK:
+		push_error("fail to load world")
 
 func _on_Settings_pressed() -> void:
 	print("settings")

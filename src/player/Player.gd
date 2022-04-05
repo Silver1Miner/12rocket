@@ -10,9 +10,11 @@ var velocity = Vector3()
 var is_jumping = false
 var is_sprinting = false
 var jump_speed = 6
+export var in_screen = false
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if !in_screen:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_input():
 	var input_dir = Vector3()
@@ -38,7 +40,9 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event.is_action_pressed("ui_select"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		if in_screen:
+			return
+		elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			get_tree().set_input_as_handled()
 
@@ -58,3 +62,12 @@ func _physics_process(delta):
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+	check_raycast()
+
+func check_raycast():
+	if _raycast.is_colliding():
+		var target = _raycast.get_collider()
+		if target.has_method("get_name"):
+			$HUD.update_label(target.get_name())
+	else:
+		$HUD.update_label("Nothing")

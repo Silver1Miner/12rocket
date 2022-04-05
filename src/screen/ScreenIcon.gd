@@ -14,5 +14,5 @@ func _ready() -> void:
 		push_error("icon press connect fail")
 
 func _on_pressed() -> void:
-	emit_signal("icon_pressed", identity)
+	emit_signal("icon_pressed")
 
