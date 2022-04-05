@@ -1,10 +1,15 @@
 extends KinematicBody
 
+onready var _raycast = $Pivot/RayCast
 onready var camera = $Pivot/Camera
 var gravity = -30
-var max_speed = 8
+var max_speed = 5
+var sprint_multiplier = 2
 var mouse_sensitivity = 0.002
 var velocity = Vector3()
+var is_jumping = false
+var is_sprinting = false
+var jump_speed = 6
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -19,6 +24,13 @@ func get_input():
 		input_dir += -global_transform.basis.x
 	if Input.is_action_pressed("ui_right"):
 		input_dir += global_transform.basis.x
+	is_jumping = false
+	if Input.is_action_just_pressed("jump"):
+		is_jumping = true
+	if Input.is_action_pressed("sprint"):
+		is_sprinting = true
+	else:
+		is_sprinting = false
 	input_dir = input_dir.normalized()
 	return input_dir
 
@@ -37,8 +49,12 @@ func _unhandled_input(event):
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
+	if is_jumping and is_on_floor():
+		velocity.y = jump_speed
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
+	if is_sprinting:
+		desired_velocity *= sprint_multiplier
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
