@@ -4,13 +4,13 @@
 [ext_resource path="res://src/player/HUD.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.5
+radius = 0.4
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.4, 0.1, 0.4 )
 
 [sub_resource type="CapsuleMesh" id=3]
-radius = 0.5
+radius = 0.4
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -38,3 +38,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[connection signal="unpaused" from="HUD/Pause" to="." method="_on_Pause_unpaused"]
+
+[editable path="HUD"]

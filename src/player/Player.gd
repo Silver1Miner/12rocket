@@ -15,6 +15,8 @@ export var in_screen = false
 func _ready() -> void:
 	if !in_screen:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	yield(get_tree().create_timer(1.0), "timeout")
+	$HUD.show_move_instructions()
 
 func get_input():
 	var input_dir = Vector3()
@@ -39,12 +41,16 @@ func get_input():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$HUD/Pause.activate()
 	if event.is_action_pressed("ui_select"):
 		if in_screen:
 			return
 		elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			get_tree().set_input_as_handled()
+	if event.is_action_pressed("interact"):
+		interact()
+		get_tree().set_input_as_handled()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -67,7 +73,19 @@ func _physics_process(delta):
 func check_raycast():
 	if _raycast.is_colliding():
 		var target = _raycast.get_collider()
-		if target.has_method("get_name"):
-			$HUD.update_label(target.get_name())
+		if target.has_method("get_description"):
+			$HUD.update_label(target.get_description())
 	else:
-		$HUD.update_label("Nothing")
+		$HUD.update_label("")
+
+func interact():
+	if _raycast.is_colliding():
+		var target = _raycast.get_collider()
+		if target.has_method("on_Player_interact"):
+			target.on_Player_interact()
+		else:
+			print("play interact fail sound here")
+
+func _on_Pause_unpaused() -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
