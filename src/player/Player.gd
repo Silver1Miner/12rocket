@@ -67,7 +67,7 @@ func _physics_process(delta):
 		desired_velocity *= sprint_multiplier
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	velocity = move_and_slide_with_snap(velocity, Vector3(0,velocity.y,0), Vector3.UP, true)
 	check_raycast()
 
 func check_raycast():
