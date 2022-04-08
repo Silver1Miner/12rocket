@@ -9,7 +9,7 @@ var mouse_sensitivity = 0.002
 var velocity = Vector3()
 var is_jumping = false
 var is_sprinting = false
-var jump_speed = 6
+var jump_speed = 8
 export var in_screen = false
 
 func _ready() -> void:

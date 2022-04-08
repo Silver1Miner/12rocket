@@ -225,6 +225,10 @@ Music="*res://src/audio/Music.tscn"
 window/size/width=640
 window/size/height=400
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
+
 [importer_defaults]
 
 texture={
