@@ -75,6 +75,8 @@ func check_raycast():
 		var target = _raycast.get_collider()
 		if target.has_method("get_description"):
 			$HUD.update_label(target.get_description())
+		if target.get_parent() and target.get_parent().has_method("on_looked_at"):
+			target.get_parent().on_looked_at()
 	else:
 		$HUD.update_label("")
 
