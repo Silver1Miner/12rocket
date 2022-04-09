@@ -19,6 +19,8 @@ func _ready() -> void:
 	$HUD.show_move_instructions()
 
 func get_input():
+	if in_screen:
+		return Vector3.ZERO
 	var input_dir = Vector3()
 	if Input.is_action_pressed("ui_up"):
 		input_dir += -global_transform.basis.z
@@ -83,7 +85,9 @@ func check_raycast():
 func interact():
 	if _raycast.is_colliding():
 		var target = _raycast.get_collider()
-		if target.has_method("on_Player_interact"):
+		if target.prop_name == "Computer":
+			enter_screen()
+		elif target.has_method("on_Player_interact"):
 			target.on_Player_interact()
 		else:
 			print("play interact fail sound here")
@@ -91,3 +95,13 @@ func interact():
 func _on_Pause_unpaused() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func enter_screen() -> void:
+	in_screen = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$HUD/Screen.visible = true
+
+func _on_Screen_logout() -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	in_screen = false
