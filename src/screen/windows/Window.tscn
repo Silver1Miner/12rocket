@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/screen/grey_panel.png" type="Texture" id=1]
+[ext_resource path="res://assets/screen/blue_panel.png" type="Texture" id=2]
+[ext_resource path="res://assets/theme/Screen.tres" type="Theme" id=3]
+[ext_resource path="res://assets/screen/icons/internet-mail.png" type="Texture" id=4]
+[ext_resource path="res://assets/screen/red_button07.png" type="Texture" id=5]
+[ext_resource path="res://assets/screen/grey_crossWhite.png" type="Texture" id=6]
+[ext_resource path="res://src/screen/windows/Window.gd" type="Script" id=7]
+
+[node name="Window" type="NinePatchRect"]
+self_modulate = Color( 0.470588, 0.470588, 0.470588, 1 )
+margin_left = 54.0
+margin_top = 49.0
+margin_right = 586.0
+margin_bottom = 349.0
+theme = ExtResource( 3 )
+texture = ExtResource( 1 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+script = ExtResource( 7 )
+
+[node name="topbar" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -265.0
+margin_right = 265.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 5
+
+[node name="header" type="HBoxContainer" parent="topbar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -12.0
+margin_right = 232.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="icon" type="TextureRect" parent="topbar/header"]
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="topbar/header"]
+margin_left = 28.0
+margin_right = 228.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 24 )
+text = "Window"
+valign = 2
+
+[node name="close" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -28.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 24 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="close"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 6.0
+margin_bottom = 6.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
