@@ -6,6 +6,7 @@ export var unlock_target = 0
 onready var _target_display = $Unlock/Instructions/Target
 onready var _camera2status = $Unlock/UnlockChoice/CameraState2
 onready var _camera3status = $Unlock/UnlockChoice/CameraState3
+onready var _doorstate1 = $Unlock/UnlockChoice/DoorState1
 onready var _doorstate2 = $Unlock/UnlockChoice/DoorState2
 
 func _ready() -> void:
@@ -33,16 +34,24 @@ func _on_CameraUnlock3_pressed() -> void:
 	unlock_target = 1
 	update_target_display()
 
-func _on_DoorUnlock2_pressed() -> void:
+func _on_DoorUnlock1_pressed() -> void:
 	unlock_target = 2
 	update_target_display()
 
-var target_choices = ["Camera 2", "Camera 3", "Door 1"]
+func _on_DoorUnlock2_pressed() -> void:
+	unlock_target = 3
+	update_target_display()
+
+var target_choices = ["Camera 2", "Camera 3", "Door 1", "Door 2"]
 func update_target_display() -> void:
 	_target_display.text = target_choices[unlock_target]
 
 func update_lock_status() -> void:
 	if PlayerData.unlocked_doors[0]:
+		_doorstate1.text = "UNLOCKED"
+	else:
+		_doorstate1.text = "*locked*"
+	if PlayerData.unlocked_doors[1]:
 		_doorstate2.text = "UNLOCKED"
 	else:
 		_doorstate2.text = "*locked*"
@@ -66,4 +75,9 @@ func _on_NumLock_check_value(current_value) -> void:
 		2:
 			if current_value == PlayerData.unlock_codes[2]:
 				PlayerData.unlocked_doors[0] = true
+		3:
+			if current_value == PlayerData.unlock_codes[3]:
+				PlayerData.unlocked_doors[1] = true
 	update_lock_status()
+
+

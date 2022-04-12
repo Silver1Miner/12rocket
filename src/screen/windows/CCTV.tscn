@@ -426,7 +426,6 @@ margin_top = 136.0
 margin_right = 150.0
 margin_bottom = 166.0
 rect_min_size = Vector2( 150, 30 )
-disabled = true
 text = "Door 1"
 
 [node name="DoorState1" type="Label" parent="Unlock/UnlockChoice" index="9"]
@@ -435,7 +434,7 @@ margin_top = 136.0
 margin_right = 254.0
 margin_bottom = 166.0
 rect_min_size = Vector2( 100, 30 )
-text = "UNLOCKED"
+text = "*Locked*"
 align = 1
 valign = 1
 
@@ -476,7 +475,7 @@ autowrap = true
 margin_top = 133.0
 margin_right = 112.0
 margin_bottom = 152.0
-text = "Camera 1"
+text = "Camera 2"
 align = 1
 
 [connection signal="pressed" from="VideoFeed/CameraChoice/Camera1" to="." method="_on_Camera1_pressed"]
@@ -486,6 +485,7 @@ align = 1
 [connection signal="check_value" from="Unlock/NumLock" to="." method="_on_NumLock_check_value"]
 [connection signal="pressed" from="Unlock/UnlockChoice/CameraUnlock2" to="." method="_on_CameraUnlock2_pressed"]
 [connection signal="pressed" from="Unlock/UnlockChoice/CameraUnlock3" to="." method="_on_CameraUnlock3_pressed"]
+[connection signal="pressed" from="Unlock/UnlockChoice/DoorUnlock1" to="." method="_on_DoorUnlock1_pressed"]
 [connection signal="pressed" from="Unlock/UnlockChoice/DoorUnlock2" to="." method="_on_DoorUnlock2_pressed"]
 
 [editable path="Unlock"]
