@@ -7,7 +7,7 @@ func on_looked_at() -> void:
 	open_double()
 
 func open_double() -> void:
-	if requires_key and not PlayerData.has_key:
+	if requires_key and not PlayerData.door2_unlocked:
 		return
 	if is_closed:
 		$SlidingDoor/AnimationPlayer.play("open")

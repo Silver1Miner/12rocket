@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/screen/windows/Window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/screen/icons/utilities-system-monitor.png" type="Texture" id=2]
 [ext_resource path="res://assets/screen/video/nastuh-abootalebi-rSpMla5RItA-unsplash.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/screen/unlocked.png" type="Texture" id=4]
 [ext_resource path="res://src/screen/windows/CCTV.gd" type="Script" id=5]
+[ext_resource path="res://src/screen/windows/NumLock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/screen/grey_panel.png" type="Texture" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "/*
@@ -288,7 +290,7 @@ margin_top = 132.0
 margin_right = 100.0
 margin_bottom = 195.0
 text = "
-Camera Locks"
+Security Locks"
 align = 1
 autowrap = true
 
@@ -300,7 +302,6 @@ rect_min_size = Vector2( 100, 50 )
 text = "LOCKS"
 
 [node name="Unlock" parent="." index="3" instance=ExtResource( 1 )]
-visible = false
 margin_left = 5.0
 margin_top = 32.0
 margin_right = 528.0
@@ -314,8 +315,177 @@ margin_right = 262.5
 texture = ExtResource( 4 )
 
 [node name="Label" parent="Unlock/topbar/header" index="1"]
-text = "Camera Unlock"
+text = "Security Locks"
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Unlock" index="2"]
+self_modulate = Color( 0.282353, 0.282353, 0.282353, 1 )
+margin_left = 405.0
+margin_top = 51.0
+margin_right = 517.0
+margin_bottom = 251.0
+texture = ExtResource( 7 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Unlock" index="3"]
+margin_left = 163.0
+margin_top = 39.0
+margin_right = 269.0
+margin_bottom = 255.0
+texture = ExtResource( 7 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NumLock" parent="Unlock" index="4" instance=ExtResource( 6 )]
+margin_left = 421.0
+margin_top = 63.0
+margin_right = 501.0
+margin_bottom = 240.0
+
+[node name="UnlockChoice" type="GridContainer" parent="Unlock" index="5"]
+margin_left = 13.0
+margin_top = 47.0
+margin_right = 267.0
+margin_bottom = 247.0
+columns = 2
+
+[node name="CameraUnlock" type="Button" parent="Unlock/UnlockChoice" index="0"]
+margin_right = 150.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 150, 30 )
+disabled = true
+text = "Camera 1"
+
+[node name="CameraState" type="Label" parent="Unlock/UnlockChoice" index="1"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 30 )
+text = "UNLOCKED"
+align = 1
+valign = 1
+
+[node name="CameraUnlock2" type="Button" parent="Unlock/UnlockChoice" index="2"]
+margin_top = 34.0
+margin_right = 150.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 150, 30 )
+text = "Camera 2"
+
+[node name="CameraState2" type="Label" parent="Unlock/UnlockChoice" index="3"]
+margin_left = 154.0
+margin_top = 34.0
+margin_right = 254.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 100, 30 )
+text = "*Locked*"
+align = 1
+valign = 1
+
+[node name="CameraUnlock3" type="Button" parent="Unlock/UnlockChoice" index="4"]
+margin_top = 68.0
+margin_right = 150.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 150, 30 )
+text = "Camera 3"
+
+[node name="CameraState3" type="Label" parent="Unlock/UnlockChoice" index="5"]
+margin_left = 154.0
+margin_top = 68.0
+margin_right = 254.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 100, 30 )
+text = "*Locked*"
+align = 1
+valign = 1
+
+[node name="ElevatorUnlock" type="Button" parent="Unlock/UnlockChoice" index="6"]
+margin_top = 102.0
+margin_right = 150.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 150, 30 )
+disabled = true
+text = "Elevator"
+
+[node name="CameraState4" type="Label" parent="Unlock/UnlockChoice" index="7"]
+margin_left = 154.0
+margin_top = 102.0
+margin_right = 254.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 100, 30 )
+text = "UNLOCKED"
+align = 1
+valign = 1
+
+[node name="DoorUnlock1" type="Button" parent="Unlock/UnlockChoice" index="8"]
+margin_top = 136.0
+margin_right = 150.0
+margin_bottom = 166.0
+rect_min_size = Vector2( 150, 30 )
+disabled = true
+text = "Door 1"
+
+[node name="DoorState1" type="Label" parent="Unlock/UnlockChoice" index="9"]
+margin_left = 154.0
+margin_top = 136.0
+margin_right = 254.0
+margin_bottom = 166.0
+rect_min_size = Vector2( 100, 30 )
+text = "UNLOCKED"
+align = 1
+valign = 1
+
+[node name="DoorUnlock2" type="Button" parent="Unlock/UnlockChoice" index="10"]
+margin_top = 170.0
+margin_right = 150.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 150, 30 )
+text = "Door 2"
+
+[node name="DoorState2" type="Label" parent="Unlock/UnlockChoice" index="11"]
+margin_left = 154.0
+margin_top = 170.0
+margin_right = 254.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 100, 30 )
+text = "*Locked*"
+align = 1
+valign = 1
+
+[node name="Instructions" type="VBoxContainer" parent="Unlock" index="6"]
+margin_left = 277.0
+margin_top = 51.0
+margin_right = 389.0
+margin_bottom = 114.0
+
+[node name="Label" type="Label" parent="Unlock/Instructions" index="0"]
+margin_right = 112.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 100, 0 )
+text = "Select system to unlock
+
+Currently unlocking:"
+align = 1
+autowrap = true
+
+[node name="Target" type="Label" parent="Unlock/Instructions" index="1"]
+margin_top = 133.0
+margin_right = 112.0
+margin_bottom = 152.0
+text = "Camera 1"
+align = 1
+
+[connection signal="pressed" from="VideoFeed/CameraChoice/Camera1" to="." method="_on_Camera1_pressed"]
+[connection signal="pressed" from="VideoFeed/CameraChoice/Camera2" to="." method="_on_Camera2_pressed"]
+[connection signal="pressed" from="VideoFeed/CameraChoice/Camera3" to="." method="_on_Camera3_pressed"]
 [connection signal="pressed" from="VideoFeed/CameraChoice/CameraUnlock" to="." method="_on_CameraUnlock_pressed"]
+[connection signal="check_value" from="Unlock/NumLock" to="." method="_on_NumLock_check_value"]
+[connection signal="pressed" from="Unlock/UnlockChoice/CameraUnlock2" to="." method="_on_CameraUnlock2_pressed"]
+[connection signal="pressed" from="Unlock/UnlockChoice/CameraUnlock3" to="." method="_on_CameraUnlock3_pressed"]
+[connection signal="pressed" from="Unlock/UnlockChoice/DoorUnlock2" to="." method="_on_DoorUnlock2_pressed"]
 
 [editable path="Unlock"]
