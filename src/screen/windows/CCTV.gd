@@ -25,9 +25,6 @@ func _on_Camera3_pressed() -> void:
 	if PlayerData.camera3_unlocked:
 		_feed.texture =PlayerData.camera_feed[2]
 
-func _on_NumLock_check_value(current_value) -> void:
-	print(current_value)
-
 func _on_CameraUnlock2_pressed() -> void:
 	unlock_target = 0
 	update_target_display()
@@ -45,7 +42,7 @@ func update_target_display() -> void:
 	_target_display.text = target_choices[unlock_target]
 
 func update_lock_status() -> void:
-	if PlayerData.door2_unlocked:
+	if PlayerData.unlocked_doors[0]:
 		_doorstate2.text = "UNLOCKED"
 	else:
 		_doorstate2.text = "*locked*"
@@ -57,3 +54,16 @@ func update_lock_status() -> void:
 		_camera3status.text = "UNLOCKED"
 	else:
 		_camera3status.text = "*locked*"
+
+func _on_NumLock_check_value(current_value) -> void:
+	match unlock_target:
+		0:
+			if current_value == PlayerData.unlock_codes[0]:
+				PlayerData.camera2_unlocked = true
+		1:
+			if current_value == PlayerData.unlock_codes[1]:
+				PlayerData.camera3_unlocked = true
+		2:
+			if current_value == PlayerData.unlock_codes[2]:
+				PlayerData.unlocked_doors[0] = true
+	update_lock_status()

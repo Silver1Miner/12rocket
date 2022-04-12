@@ -2,12 +2,13 @@ extends Spatial
 
 export var is_closed = true
 export var requires_key = false
+export var door_id = 0
 
 func on_looked_at() -> void:
 	open_double()
 
 func open_double() -> void:
-	if requires_key and not PlayerData.door2_unlocked:
+	if requires_key and not PlayerData.unlocked_doors[door_id]:
 		return
 	if is_closed:
 		$SlidingDoor/AnimationPlayer.play("open")
