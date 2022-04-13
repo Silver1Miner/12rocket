@@ -105,3 +105,6 @@ func _on_Screen_logout() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	in_screen = false
+
+func end_game() -> void:
+	$HUD.exit_game()

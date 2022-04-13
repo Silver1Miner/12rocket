@@ -41,14 +41,14 @@ func _on_Headings_item_selected(index: int) -> void:
 
 var emails = [
 	{
-		"title": "Message 1",
+		"title": "YOU KNOW WHAT MUST BE DONE",
 		"from": "Me",
-		"text": "Everything is fine",
+		"text": "YOU KNOW WHAT MUST BE DONE",
 	},
 	{
-		"title": "Message 2",
-		"from": "Me",
-		"text": "Everything is not fine",
+		"title": "High Alert",
+		"from": "Chief of Security",
+		"text": "",
 	},
 	{
 		"title": "Message 3",

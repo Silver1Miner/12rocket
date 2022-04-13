@@ -7,8 +7,10 @@ func _ready() -> void:
 	if OS.get_name() in nonquit:
 		quit_button.visible = false
 	Music.play_music("working")
+	$FadeIn/AnimationPlayer.play("fadein")
 
 func _on_Start_pressed() -> void:
+	PlayerData.reset()
 	if get_tree().change_scene_to(PlayerData.world) != OK:
 		push_error("fail to load world")
 

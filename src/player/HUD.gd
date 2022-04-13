@@ -2,6 +2,7 @@ extends Control
 
 onready var _label = $Status/Label
 onready var _animation_player = $Status/AnimationPlayer
+onready var transition = $Transition/AnimationPlayer
 
 func _ready() -> void:
 	$Status/Move.visible = false
@@ -20,3 +21,9 @@ func show_move_advanced_instructions() -> void:
 	yield(_animation_player, "animation_finished")
 	_animation_player.play("MoveAdvanceFade")
 
+func exit_game() -> void:
+	transition.play("fade")
+	yield(transition, "animation_finished")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if get_tree().change_scene_to(PlayerData.ending) != OK:
+		push_error("failed to go to ending")
