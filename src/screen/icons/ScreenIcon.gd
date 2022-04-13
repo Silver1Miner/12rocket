@@ -15,4 +15,8 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	emit_signal("icon_pressed")
-
+	texture_disabled = icon_texture
+	texture_focused = icon_texture
+	texture_hover = icon_texture
+	texture_normal = icon_texture
+	texture_pressed = icon_texture

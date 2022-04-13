@@ -21,3 +21,22 @@ func _on_ToInbox_icon_pressed() -> void:
 
 func _on_ToVideo_pressed() -> void:
 	$CCTV.visible = true
+
+func _on_Messages_new_message() -> void:
+	$Alert.visible = true
+	$ToInbox.texture_normal = preload("res://assets/screen/icons/mail-message-new.png")
+
+func _on_Timer_timeout() -> void:
+	$Inbox/Messages.new_message()
+
+var c2_unused = true
+var c3_unused = true
+func _on_CCTV_camera_used(camera_id) -> void:
+	if camera_id == 2 and c2_unused:
+		c2_unused = false
+		randomize()
+		$Timer.start(rand_range(10,20))
+	elif camera_id == 3 and c3_unused:
+		c3_unused = false
+		randomize()
+		$Timer.start(rand_range(10,20))

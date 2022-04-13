@@ -302,6 +302,7 @@ rect_min_size = Vector2( 100, 50 )
 text = "LOCKS"
 
 [node name="Unlock" parent="." index="3" instance=ExtResource( 1 )]
+visible = false
 margin_left = 5.0
 margin_top = 32.0
 margin_right = 528.0
@@ -463,18 +464,16 @@ margin_bottom = 114.0
 
 [node name="Label" type="Label" parent="Unlock/Instructions" index="0"]
 margin_right = 112.0
-margin_bottom = 129.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 100, 0 )
-text = "Select system to unlock
-
-Currently unlocking:"
+text = "Currently unlocking:"
 align = 1
 autowrap = true
 
 [node name="Target" type="Label" parent="Unlock/Instructions" index="1"]
-margin_top = 133.0
+margin_top = 45.0
 margin_right = 112.0
-margin_bottom = 152.0
+margin_bottom = 64.0
 text = "Camera 2"
 align = 1
 

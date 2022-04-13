@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/screen/windows/Window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/screen/icons/emblem-important.png" type="Texture" id=2]
+
+[node name="Alert" instance=ExtResource( 1 )]
+margin_left = 424.0
+margin_bottom = 176.0
+
+[node name="topbar" parent="." index="0"]
+margin_left = -81.0
+margin_right = 79.0
+
+[node name="icon" parent="topbar/header" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Label" parent="topbar/header" index="1"]
+text = "ALERT"
+
+[node name="Label" type="Label" parent="." index="2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -31.5
+margin_right = 60.0
+margin_bottom = 31.5
+text = "
+New Message Received"
+align = 1
+valign = 1
+autowrap = true
