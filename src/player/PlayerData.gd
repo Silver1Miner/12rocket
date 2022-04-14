@@ -11,6 +11,8 @@ var camera2_unlocked := false
 var camera3_unlocked := false
 var unlocked_doors = [false, false]
 var ending_choice := 0
+var game_route := 2
+var previous_route := 0
 
 var camera_feed = [
 	preload("res://assets/screen/video/nastuh-abootalebi-rSpMla5RItA-unsplash.jpg"),
@@ -18,10 +20,10 @@ var camera_feed = [
 	preload("res://assets/screen/video/nastuh-abootalebi-JdcJn85xD2k-unsplash.jpg"),
 ]
 var unlock_codes = [
-	"1234",
-	"0032",
-	"2004",
-	"2001",
+	["1234","2345","3456"],
+	["0032","0032","0032"],
+	["2004","2004","2004"],
+	["2001","2001","2001"],
 ]
 
 func reset() -> void:
@@ -30,3 +32,8 @@ func reset() -> void:
 	camera3_unlocked = false
 	unlocked_doors = [false, false]
 	ending_choice = 0
+	previous_route = game_route
+	if game_route < 2:
+		game_route += 1
+	else:
+		game_route = 0

@@ -2,6 +2,7 @@ extends Window
 
 onready var _unlock = $Unlock
 onready var _feed = $VideoFeed/Feed
+onready var _feed_cover = $VideoFeed/Feed/Cover
 export var unlock_target = 0
 onready var _target_display = $Unlock/Instructions/Target
 onready var _camera2status = $Unlock/UnlockChoice/CameraState2
@@ -21,15 +22,19 @@ func _on_CameraUnlock_pressed() -> void:
 
 func _on_Camera1_pressed() -> void:
 	_feed.texture =PlayerData.camera_feed[0]
+	_feed_cover.visible = false
+	emit_signal("camera_used", 1)
 
 func _on_Camera2_pressed() -> void:
 	if PlayerData.camera2_unlocked:
 		_feed.texture =PlayerData.camera_feed[1]
+		_feed_cover.visible = false
 		emit_signal("camera_used", 2)
 
 func _on_Camera3_pressed() -> void:
 	if PlayerData.camera3_unlocked:
 		_feed.texture =PlayerData.camera_feed[2]
+		_feed_cover.visible = false
 		emit_signal("camera_used", 3)
 
 func _on_CameraUnlock2_pressed() -> void:
@@ -77,16 +82,16 @@ func update_lock_status() -> void:
 func _on_NumLock_check_value(current_value) -> void:
 	match unlock_target:
 		0:
-			if current_value == PlayerData.unlock_codes[0]:
+			if current_value == PlayerData.unlock_codes[0][PlayerData.game_route]:
 				PlayerData.camera2_unlocked = true
 		1:
-			if current_value == PlayerData.unlock_codes[1]:
+			if current_value == PlayerData.unlock_codes[1][PlayerData.game_route]:
 				PlayerData.camera3_unlocked = true
 		2:
-			if current_value == PlayerData.unlock_codes[2]:
+			if current_value == PlayerData.unlock_codes[2][PlayerData.game_route]:
 				PlayerData.unlocked_doors[0] = true
 		3:
-			if current_value == PlayerData.unlock_codes[3]:
+			if current_value == PlayerData.unlock_codes[3][PlayerData.game_route]:
 				PlayerData.unlocked_doors[1] = true
 	update_lock_status()
 

@@ -236,7 +236,7 @@ script = ExtResource( 5 )
 texture = ExtResource( 2 )
 
 [node name="Label" parent="topbar/header" index="1"]
-text = "CCTV - Security Feed"
+text = "CCTV Security System"
 
 [node name="VideoFeed" type="HBoxContainer" parent="." index="2"]
 margin_left = 10.0
@@ -259,6 +259,22 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 400, 0 )
 texture = ExtResource( 3 )
 expand = true
+
+[node name="Cover" type="ColorRect" parent="VideoFeed/Feed" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="VideoFeed/Feed/Cover" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -9.5
+margin_right = 75.0
+margin_bottom = 9.5
+text = "SELECT A CAMERA"
 
 [node name="CameraChoice" type="VBoxContainer" parent="VideoFeed" index="1"]
 margin_left = 412.0
@@ -331,6 +347,7 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Unlock" index="3"]
+self_modulate = Color( 0.258824, 0.258824, 0.258824, 1 )
 margin_left = 163.0
 margin_top = 39.0
 margin_right = 269.0
@@ -341,13 +358,25 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="NumLock" parent="Unlock" index="4" instance=ExtResource( 6 )]
+[node name="NinePatchRect3" type="NinePatchRect" parent="Unlock" index="4"]
+self_modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+margin_left = 280.0
+margin_top = 92.0
+margin_right = 389.0
+margin_bottom = 119.0
+texture = ExtResource( 7 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NumLock" parent="Unlock" index="5" instance=ExtResource( 6 )]
 margin_left = 421.0
 margin_top = 63.0
 margin_right = 501.0
 margin_bottom = 240.0
 
-[node name="UnlockChoice" type="GridContainer" parent="Unlock" index="5"]
+[node name="UnlockChoice" type="GridContainer" parent="Unlock" index="6"]
 margin_left = 13.0
 margin_top = 47.0
 margin_right = 267.0
@@ -456,7 +485,7 @@ text = "*Locked*"
 align = 1
 valign = 1
 
-[node name="Instructions" type="VBoxContainer" parent="Unlock" index="6"]
+[node name="Instructions" type="VBoxContainer" parent="Unlock" index="7"]
 margin_left = 277.0
 margin_top = 51.0
 margin_right = 389.0
@@ -466,7 +495,7 @@ margin_bottom = 114.0
 margin_right = 112.0
 margin_bottom = 41.0
 rect_min_size = Vector2( 100, 0 )
-text = "Currently unlocking:"
+text = "CURRENTLY UNLOCKING:"
 align = 1
 autowrap = true
 

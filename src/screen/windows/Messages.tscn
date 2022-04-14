@@ -27,7 +27,7 @@ custom_constants/separation = 2
 margin_right = 320.0
 
 [node name="From" type="NinePatchRect" parent="Content"]
-self_modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+self_modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
 margin_top = 2.0
 margin_right = 320.0
 margin_bottom = 52.0
@@ -56,7 +56,7 @@ margin_bottom = 42.0
 text = "The Office of the CEO"
 
 [node name="Title" type="NinePatchRect" parent="Content"]
-self_modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+self_modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
 margin_top = 54.0
 margin_right = 320.0
 margin_bottom = 104.0
@@ -85,7 +85,7 @@ margin_bottom = 42.0
 text = "REMINDER TO ALL EMPLOYEES"
 
 [node name="Content" type="NinePatchRect" parent="Content"]
-self_modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+self_modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
 margin_top = 106.0
 margin_right = 320.0
 margin_bottom = 266.0

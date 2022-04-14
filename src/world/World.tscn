@@ -213,7 +213,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3 )
 shape = SubResource( 26 )
 
 [node name="GunDesk" parent="." instance=ExtResource( 7 )]
-transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 10.5, 0, -5 )
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -8, 0, -5 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="StartTrigger" to="." method="_on_StartTrigger_body_entered"]

@@ -29,9 +29,14 @@ func _on_Messages_new_message() -> void:
 func _on_Timer_timeout() -> void:
 	$Inbox/Messages.new_message()
 
+var c1_unused = true
 var c2_unused = true
 var c3_unused = true
 func _on_CCTV_camera_used(camera_id) -> void:
+	if camera_id == 1 and c1_unused:
+		c1_unused = false
+		randomize()
+		$Timer.start(rand_range(10,20))
 	if camera_id == 2 and c2_unused:
 		c2_unused = false
 		randomize()
@@ -40,3 +45,9 @@ func _on_CCTV_camera_used(camera_id) -> void:
 		c3_unused = false
 		randomize()
 		$Timer.start(rand_range(10,20))
+
+func _on_ToMessages_pressed() -> void:
+	$Alert.visible = false
+	$CCTV.visible = false
+	$Calendar.visible = false
+	$Inbox.visible = true

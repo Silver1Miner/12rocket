@@ -79,6 +79,8 @@ one_shot = true
 [connection signal="icon_pressed" from="Logout" to="." method="_on_Logout_icon_pressed"]
 [connection signal="camera_used" from="CCTV" to="." method="_on_CCTV_camera_used"]
 [connection signal="new_message" from="Inbox/Messages" to="." method="_on_Messages_new_message"]
+[connection signal="pressed" from="Alert/ToMessages" to="." method="_on_ToMessages_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Inbox"]
+[editable path="Alert"]

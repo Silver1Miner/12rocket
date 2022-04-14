@@ -34,6 +34,7 @@ texture = ExtResource( 2 )
 text = "CALENDAR"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." index="2"]
+self_modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
 margin_left = 12.0
 margin_top = 39.0
 margin_right = 522.0
@@ -45,6 +46,7 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." index="3"]
+self_modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
 margin_left = 12.0
 margin_top = 207.0
 margin_right = 522.0

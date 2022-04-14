@@ -6,6 +6,7 @@
 [node name="Alert" instance=ExtResource( 1 )]
 margin_left = 424.0
 margin_bottom = 176.0
+mouse_filter = 0
 
 [node name="topbar" parent="." index="0"]
 margin_left = -81.0
@@ -17,7 +18,19 @@ texture = ExtResource( 2 )
 [node name="Label" parent="topbar/header" index="1"]
 text = "ALERT"
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="ToMessages" type="Button" parent="." index="2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -37.0
+margin_right = 25.0
+margin_bottom = -7.0
+rect_min_size = Vector2( 50, 30 )
+text = "Read"
+
+[node name="Label" type="Label" parent="." index="3"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -26,8 +39,7 @@ margin_left = -60.0
 margin_top = -31.5
 margin_right = 60.0
 margin_bottom = 31.5
-text = "
-New Message Received"
+text = "New Message Received"
 align = 1
 valign = 1
 autowrap = true
