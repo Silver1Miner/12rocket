@@ -11,6 +11,10 @@ onready var _doorstate1 = $Unlock/UnlockChoice/DoorState1
 onready var _doorstate2 = $Unlock/UnlockChoice/DoorState2
 onready var _camera2 = $VideoFeed/CameraChoice/Camera2
 onready var _camera3 = $VideoFeed/CameraChoice/Camera3
+onready var _camera2choice = $Unlock/UnlockChoice/CameraUnlock2
+onready var _camera3choice = $Unlock/UnlockChoice/CameraUnlock3
+onready var _door1choice = $Unlock/UnlockChoice/DoorUnlock1
+onready var _door2choice = $Unlock/UnlockChoice/DoorUnlock2
 
 signal camera_used(camera_id)
 
@@ -60,24 +64,32 @@ func update_target_display() -> void:
 func update_lock_status() -> void:
 	if PlayerData.unlocked_doors[0]:
 		_doorstate1.text = "UNLOCKED"
+		_door1choice.disabled = true
 	else:
 		_doorstate1.text = "*locked*"
+		_door1choice.disabled = false
 	if PlayerData.unlocked_doors[1]:
 		_doorstate2.text = "UNLOCKED"
+		_door2choice.disabled = true
 	else:
 		_doorstate2.text = "*locked*"
+		_door2choice.disabled = false
 	if PlayerData.camera2_unlocked:
 		_camera2status.text = "UNLOCKED"
 		_camera2.disabled = false
+		_camera2choice.disabled = true
 	else:
 		_camera2status.text = "*locked*"
 		_camera2.disabled = true
+		_camera2choice.disabled = false
 	if PlayerData.camera3_unlocked:
 		_camera3status.text = "UNLOCKED"
 		_camera3.disabled = false
+		_camera3choice.disabled = true
 	else:
 		_camera3status.text = "*locked*"
 		_camera3.disabled = true
+		_camera3choice.disabled = false
 
 func _on_NumLock_check_value(current_value) -> void:
 	match unlock_target:
