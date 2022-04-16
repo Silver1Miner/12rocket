@@ -31,13 +31,16 @@ func _on_Camera1_pressed() -> void:
 
 func _on_Camera2_pressed() -> void:
 	if PlayerData.camera2_unlocked:
-		_feed.texture =PlayerData.camera_feed[1]
+		if PlayerData.unlocked_doors[0]:
+			_feed.texture = PlayerData.camera_feed[3]
+		else:
+			_feed.texture = PlayerData.camera_feed[1]
 		_feed_cover.visible = false
 		emit_signal("camera_used", 2)
 
 func _on_Camera3_pressed() -> void:
 	if PlayerData.camera3_unlocked:
-		_feed.texture =PlayerData.camera_feed[2]
+		_feed.texture = PlayerData.camera_feed[2]
 		_feed_cover.visible = false
 		emit_signal("camera_used", 3)
 
@@ -57,7 +60,7 @@ func _on_DoorUnlock2_pressed() -> void:
 	unlock_target = 3
 	update_target_display()
 
-var target_choices = ["Camera 2", "Camera 3", "Door 1", "Door 2"]
+var target_choices = ["Camera 2", "Camera 3", "Lab 46", "Lounge"]
 func update_target_display() -> void:
 	_target_display.text = target_choices[unlock_target]
 

@@ -49,7 +49,7 @@ var emails = [
 		"text":
 """ALL PERSONNEL ARE TO LEAVE THE FACILITY AT ONCE. THIS IS NOT A DRILL.
 
-SECURITY PERSONNEL MAY USE THE ELEVATOR. NON-SECURITY PERSONNEL MUST USE THE STAIRS.
+SECURITY PERSONNEL MUST EVACUATE VIA THE NEAREST ELEVATOR.
 
 THIS IS NOT A DRILL.""",
 	},
@@ -120,7 +120,7 @@ This is an automated message from an unattended inbox. Do not reply.
 
 Our company handles very confidential information, and moreover, some of the services we require from our security contractors involve a certain degree of discretion.
 
-We ask that you keep this in mind when making decisions on which security officers to assign to our offices. We do NOT want a repeat at what happened at the 'Gaslit' satellite office.
+We ask that you keep this in mind when making decisions on which security officers to assign to our offices. We do NOT want a repeat of what happened at the 'Gaslit' satellite office.
 
 If an unqualified officer is used to terminate an employee, said officer may need to be terminated as well, to maintain confidentiality.
 
@@ -135,11 +135,11 @@ Chief Operations Officer
 		"text":
 ["""Don't try it. They're on the lookout for 'temporal paradoxes.'
 
-If you try it. They WILL notice.""",
+They WILL notice.""",
 """Seriously, do not try it. They WILL notice a 'temporal paradox.'
 
 Just play along.""",
-"""I am absolute serious. They are watching out for 'temporal paradoxes.'
+"""I am absolute serious. They are watching for 'temporal paradoxes.'
 
 They WILL notice if you know something that you shouldn't know.""",
 ]
@@ -148,9 +148,9 @@ They WILL notice if you know something that you shouldn't know.""",
 		"title": "Missing Security Equipment",
 		"from": "Chief of Security",
 		"text":
-"""Recently a level 5 security equipment item was found to be missing from its security station.
+"""Recently a piece of level 5 security equipment was reported missing from its security station.
 
-Needless to say, this is a very serious matter. It is completely unaccetable to have such a sensitive piece of equipment just lying around. The security officer in charge of the missing equipment has already been terminated.
+Needless to say, it is completely unaccetable to have such a sensitive piece of equipment unaccounted for. The security officer in charge has already been terminated.
 
 If any security officer finds the missing equipment, return it to its designated security station immediately.
 """,
@@ -161,9 +161,9 @@ If any security officer finds the missing equipment, return it to its designated
 		"text":
 """Good News!
 
-Following extensive feedback, the facility has reverted from gas back to electric powered lighting.
+Following extensive feedback, the facility has reverted from gas powered lighting back to electric powered lighting.
 
-This decision was not influenced by the rumors of gas poisoning or missing personnel which, as we continue to remind you, are all false.
+This decision was not influenced by any rumors of gas poisoning or missing personnel, which, as we continue to remind you, are false.
 
 --
 This is an automated message from an unattended inbox. Do not reply.

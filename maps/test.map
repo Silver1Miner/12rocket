@@ -123,12 +123,12 @@
 }
 // brush 13
 {
-( -96 240 80 ) ( -96 -240 80 ) ( -96 -240 64 ) office/Beigewall2_Texture 0 0 0 1 1
-( -96 -240 80 ) ( 144 -240 80 ) ( 144 -240 64 ) office/Beigewall2_Texture 0 0 0 1 1
-( 144 -240 64 ) ( 144 240 64 ) ( -96 240 64 ) office/Beigewall2_Texture 0 0 0 1 1
-( -96 240 80 ) ( 144 240 80 ) ( 144 -240 80 ) office/Beigewall2_Texture 0 0 0 1 1
-( 144 240 64 ) ( 144 240 80 ) ( -96 240 80 ) office/Beigewall2_Texture 0 0 0 1 1
-( 144 -240 80 ) ( 144 240 80 ) ( 144 240 64 ) office/Beigewall2_Texture 0 0 0 1 1
+( -96 240 80 ) ( -96 -240 80 ) ( -96 -240 64 ) office/Beigewall_Texture 0 0 0 1 1
+( -96 -240 80 ) ( 144 -240 80 ) ( 144 -240 64 ) office/Beigewall_Texture 0 0 0 1 1
+( 144 -240 64 ) ( 144 240 64 ) ( -96 240 64 ) office/Beigewall_Texture 0 0 0 1 1
+( -96 240 80 ) ( 144 240 80 ) ( 144 -240 80 ) office/Beigewall_Texture 0 0 0 1 1
+( 144 240 64 ) ( 144 240 80 ) ( -96 240 80 ) office/Beigewall_Texture 0 0 0 1 1
+( 144 -240 80 ) ( 144 240 80 ) ( 144 240 64 ) office/Beigewall_Texture 0 0 0 1 1
 }
 // brush 14
 {

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/models/stoolBar.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://src/world/props/Prop.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( -0.26544, 0.394975, 0.114916, -0.199106, 0.394975, 0.229855, -0.251227, 0.435, 0.114916, -0.199106, 0.394975, 0, -0.199496, 0, 0.051124, -0.199496, 0, 0.178731, -0.06636, 0.394975, 0.229855, -0.191987, 0.435, 0.217547, -0.191987, 0.435, 0.0123085, -0.06636, 0.394975, 0, -0.0659703, 0, 0.051124, -0.0659703, 0, 0.178731, 0, 0.394975, 0.114916, -0.0734793, 0.435, 0.217547, -0.0734793, 0.435, 0.0123085, -0.0142386, 0.435, 0.114916 )
+
+[node name="Stool" instance=ExtResource( 2 )]
+prop_name = "Stool"
+prop_description = "A laboratory stool"
+
+[node name="MeshInstance" parent="." index="0"]
+mesh = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 1 )

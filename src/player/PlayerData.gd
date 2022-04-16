@@ -15,15 +15,16 @@ var game_route := 2
 var previous_route := 0
 
 var camera_feed = [
-	preload("res://assets/screen/video/nastuh-abootalebi-rSpMla5RItA-unsplash.jpg"),
-	preload("res://assets/screen/video/annie-spratt-wgivdx9dBdQ-unsplash.jpg"),
-	preload("res://assets/screen/video/nastuh-abootalebi-JdcJn85xD2k-unsplash.jpg"),
+	preload("res://assets/screen/video/hall-view.PNG"),
+	preload("res://assets/screen/video/lab-view1.PNG"),
+	preload("res://assets/screen/video/hall-view.PNG"),
+	preload("res://assets/screen/video/lab-view2.PNG")
 ]
 var unlock_codes = [
 	["1234","2345","3456"],
-	["0032","0032","0032"],
+	["8128","8128","8128"],
 	["0451","0451","0451"],
-	["2001","2001","2001"],
+	["6174","6174","6174"],
 ]
 
 func reset() -> void:

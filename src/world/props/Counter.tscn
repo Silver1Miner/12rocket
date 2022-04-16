@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/world/props/Prop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/models/kitchenBar.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 0, 0.42, 0.21, 0, 0.389988, 0.21, 0, 0.42, 0, -0.43, 0.42, 0.21, 0, 0.0582146, 0.189999, -0.43, 0.389988, 0.21, 0, 0.389988, 0, -0.43, 0.42, 0, 0, 0, 0.169998, -0.43, 0.0582146, 0.189999, 0, 0.0582146, 0.0199804, -0.43, 0.389988, 0, 0, 0, 0.0399814, -0.43, 0, 0.169998, -0.43, 0.0582146, 0.0199804, -0.43, 0, 0.0399814 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 0, 0.42, 0.21, 0, 0.389988, 0.21, 0, 0.42, 0, -0.43, 0.42, 0.21, 0, 0.0582146, 0.189999, -0.43, 0.389988, 0.21, 0, 0.389988, 0, -0.43, 0.42, 0, 0, 0, 0.169998, -0.43, 0.0582146, 0.189999, 0, 0.0582146, 0.0199804, -0.43, 0.389988, 0, 0, 0, 0.0399814, -0.43, 0, 0.169998, -0.43, 0.0582146, 0.0199804, -0.43, 0, 0.0399814 )
 
 [node name="Counter" instance=ExtResource( 1 )]
 prop_name = "Counter"
@@ -12,6 +18,9 @@ mesh = ExtResource( 2 )
 material/4 = null
 material/5 = null
 
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 1 )
+
 [node name="kitchenBar" type="MeshInstance" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0 )
 mesh = ExtResource( 2 )
@@ -21,3 +30,7 @@ material/2 = null
 material/3 = null
 material/4 = null
 material/5 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0 )
+shape = SubResource( 2 )
