@@ -94,7 +94,7 @@ The job is really simple: use the CCTV window to keep an eye on the security cam
 
 Your computer terminal should already be set up for you. Just keep watch on cameras 1 and 2.
 
-The terminal also contains a camera 3, but just ignore that one. That one is not under your jursidiction.
+The terminal also contains a camera 3, but just ignore that one. It's not under your jursidiction.
 
 -Briggs""",
 	},

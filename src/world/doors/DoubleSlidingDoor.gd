@@ -30,3 +30,9 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 		is_closed = false
 	elif anim_name == "close":
 		is_closed = true
+
+func get_description() -> String:
+	if requires_key and not PlayerData.unlocked_doors[door_id]:
+		return "locked..."
+	else:
+		return ""

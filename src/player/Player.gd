@@ -79,13 +79,15 @@ func check_raycast():
 			$HUD.update_label(target.get_description())
 		if target.get_parent() and target.get_parent().has_method("on_looked_at"):
 			target.get_parent().on_looked_at()
+			if target.get_parent().has_method("get_description"):
+				$HUD.update_label(target.get_parent().get_description())
 	else:
 		$HUD.update_label("")
 
 func interact():
 	if _raycast.is_colliding():
 		var target = _raycast.get_collider()
-		if target.prop_name == "Computer":
+		if target and target.get("prop_name") and target.prop_name == "Computer":
 			enter_screen()
 		elif target.has_method("on_Player_interact"):
 			target.on_Player_interact()
