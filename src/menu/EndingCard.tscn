@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/menu/EndingCard.gd" type="Script" id=2]
+[ext_resource path="res://assets/ending/news-clip.PNG" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -77,9 +78,23 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -296.0
+margin_top = -187.0
+margin_right = 898.0
+margin_bottom = 493.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+stretch_mode = 4
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.5

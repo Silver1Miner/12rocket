@@ -1,12 +1,23 @@
 extends Control
 
 onready var fade_animation = $Fade/AnimationPlayer
+var ending_cards := [
+	preload("res://assets/ending/message.PNG"),
+	preload("res://assets/ending/news-clip.PNG"),
+	preload("res://assets/ending/tragedy.PNG")
+]
+
 
 func _ready() -> void:
 	if PlayerData.ending_choice == 1:
-		$Label.text = "ENDING1"
+		$Label.text = "Time Paradox Ending"
+		$TextureRect.texture = ending_cards[0]
+	elif PlayerData.ending_choice == 2:
+		$Label.text = "Rocket Launcher Ending"
+		$TextureRect.texture = ending_cards[2]
 	else:
-		$Label.text = "ENDING2"
+		$Label.text = "Elevator Ending"
+		$TextureRect.texture = ending_cards[1]
 	fade_animation.play("fade")
 
 func _on_Button_pressed() -> void:

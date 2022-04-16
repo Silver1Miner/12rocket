@@ -156,6 +156,17 @@ If any security officer finds the missing equipment, return it to its designated
 """,
 	},
 		{
+		"title": "Kaprekar's Constant",
+		"from": "You",
+		"text":
+"""1. Take any four-digit number using at least two different digits. Leading zeroes allowed.
+2. Arrange the digits in descending order and ascending order to form two numbers, adding leading zeroes as necessary.
+3. Subtract the smaller number from the bigger number.
+4. Return to step 2 and repeat.
+When the series converges, you know what must be done.
+""",
+	},
+		{
 		"title": "Return to Electric Lighting",
 		"from": "Facility Operations Manager",
 		"text":

@@ -74,15 +74,15 @@ margin_right = 215.0
 margin_bottom = 47.0
 
 [node name="TitleLabel" type="Label" parent="Content/Title/TitleLabels"]
-margin_right = 250.0
+margin_right = 230.0
 margin_bottom = 19.0
 text = "SUBJECT"
 
 [node name="Title" type="Label" parent="Content/Title/TitleLabels"]
 margin_top = 23.0
-margin_right = 250.0
+margin_right = 230.0
 margin_bottom = 42.0
-text = "REMINDER TO ALL EMPLOYEES"
+text = "To: Rocket Security LLC"
 
 [node name="Content" type="NinePatchRect" parent="Content"]
 self_modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
@@ -101,10 +101,12 @@ margin_left = 5.0
 margin_top = 8.0
 margin_right = 315.0
 margin_bottom = 152.0
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec leo et neque congue dignissim. Nunc tristique metus in justo hendrerit, ut commodo nulla vulputate. Sed eu lobortis justo. Nunc interdum et massa nec sollicitudin. Integer rutrum metus et augue fermentum, quis blandit orci bibendum. In urna mauris, venenatis nec euismod nec, fermentum eget arcu. Vestibulum efficitur enim sit amet turpis tristique, ut commodo ipsum ultricies.
+text = "We have terminated one of your officers. The officer demonstrated knowledge of unauthorized information. Worse still, the officer's behavior resembled those of hostile temporal agents, capable of shifting between timelines and within timelines in order to use advance knowledge to gain advantages over enemies.
 
-Integer faucibus feugiat orci ut porta. Integer egestas vel lacus eu bibendum. Aenean laoreet porttitor mi, in elementum ex sodales vel. Mauris volutpat, enim in lobortis commodo, turpis sem eleifend purus, ac rhoncus dui odio et risus. Suspendisse at ipsum nec velit varius molestie quis a quam. Curabitur faucibus ultricies turpis, sed dignissim dolor bibendum eu. Etiam nec dolor lobortis eros feugiat ornare sed eu ex. Maecenas ligula odio, aliquam eget porttitor a, consectetur sed erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+Due to the sensitve nature of our work, we are unable to tolerate such threats and are therefore terminating our contract with your firm, effective immediately.
 
-Aenean nibh turpis, ultrices id fringilla vitae, laoreet a elit. Nulla in eros vel ante maximus commodo ut ut ex. Nullam semper sit amet nisi eu feugiat. Aenean magna est, eleifend eget pulvinar quis, consectetur non nulla. Praesent id pellentesque nisl. Cras a volutpat orci, ornare laoreet diam. Proin rutrum velit ac est mattis elementum. Sed non hendrerit diam. Aenean vel vulputate purus. Vivamus ornare eros sed venenatis volutpat. Donec et nisl quis dolor posuere ullamcorper. Aliquam erat volutpat."
+--
+B. Russel
+Chief Operations Officer"
 
 [connection signal="item_selected" from="Headings" to="." method="_on_Headings_item_selected"]
