@@ -11,6 +11,7 @@ var is_jumping = false
 var is_sprinting = false
 var jump_speed = 8
 export var in_screen = false
+export var has_rocket_launcher = false
 
 func _ready() -> void:
 	if !in_screen:
@@ -50,6 +51,12 @@ func _input(event):
 		elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			get_tree().set_input_as_handled()
+	if event.is_action_pressed("shoot"):
+		if has_rocket_launcher:
+			$Pivot/RocketLauncher.shoot()
+		else:
+			interact()
+			get_tree().set_input_as_handled()
 	if event.is_action_pressed("interact"):
 		interact()
 		get_tree().set_input_as_handled()
@@ -87,8 +94,12 @@ func check_raycast():
 func interact():
 	if _raycast.is_colliding():
 		var target = _raycast.get_collider()
-		if target and target.get("prop_name") and target.prop_name == "Computer":
-			enter_screen()
+		if target and target.get("prop_name"):
+			if target.prop_name == "Computer":
+				enter_screen()
+			elif target.prop_name == "Rocket":
+				has_rocket_launcher = true
+				target.on_Player_interact()
 		elif target.has_method("on_Player_interact"):
 			target.on_Player_interact()
 		else:

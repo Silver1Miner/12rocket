@@ -168,6 +168,28 @@ root_node = NodePath("../..")
 anims/MoveAdvanceFade = SubResource( 2 )
 anims/MoveFade = SubResource( 1 )
 
+[node name="Combat" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HP" type="Label" parent="Combat"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -23.0
+margin_right = 84.0
+text = "HP: 100"
+
+[node name="Ammo" type="Label" parent="Combat"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -23.0
+text = "20"
+
 [node name="Screen" parent="." instance=ExtResource( 2 )]
 visible = false
 

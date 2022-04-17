@@ -1,4 +1,5 @@
 extends StaticBody
+class_name Prop
 
 export var prop_name = "Block"
 export var prop_description = "A generic block prop"
