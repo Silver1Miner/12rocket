@@ -9,6 +9,7 @@ func _ready() -> void:
 		$UserID.text = "Logged in as: Remote Connection"
 
 func _on_Logout_icon_pressed() -> void:
+	Music.play_sound("logoff")
 	visible = false
 	emit_signal("logout")
 

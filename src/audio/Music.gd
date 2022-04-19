@@ -20,3 +20,18 @@ func play_music(music_name: String, start: float = 0) -> void:
 	stream = tracks[music_name] #load(music_path)
 	play(start)
 	previous_name = music_name
+
+# SOUND
+func play_sound(sound_name: String) -> void:
+	if not sound_name in effects:
+		push_error("misnamed sound effect")
+	$Sound.stream = effects[sound_name]
+	$Sound.play(0)
+
+var effects := {
+	"logon": preload("res://assets/audio/effects/on.ogg"),
+	"logoff": preload("res://assets/audio/effects/off.ogg"),
+	"switch": preload("res://assets/audio/effects/switch10.ogg"),
+	"error": preload("res://assets/audio/effects/error_007.ogg"),
+	"unlock": preload("res://assets/audio/effects/confirmation_004.ogg")
+}

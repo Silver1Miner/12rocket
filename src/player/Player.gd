@@ -112,6 +112,7 @@ func _on_Pause_unpaused() -> void:
 func enter_screen() -> void:
 	in_screen = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Music.play_sound("logon")
 	$HUD/Screen.visible = true
 
 func _on_Screen_logout() -> void:
