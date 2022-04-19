@@ -77,6 +77,7 @@ one_shot = true
 [connection signal="pressed" from="ToVideo" to="." method="_on_ToVideo_pressed"]
 [connection signal="icon_pressed" from="ToCalendar" to="." method="_on_ToCalendar_icon_pressed"]
 [connection signal="icon_pressed" from="Logout" to="." method="_on_Logout_icon_pressed"]
+[connection signal="advance_knowledge" from="CCTV" to="." method="_on_CCTV_advance_knowledge"]
 [connection signal="camera_used" from="CCTV" to="." method="_on_CCTV_camera_used"]
 [connection signal="new_message" from="Inbox/Messages" to="." method="_on_Messages_new_message"]
 [connection signal="pressed" from="Alert/ToMessages" to="." method="_on_ToMessages_pressed"]

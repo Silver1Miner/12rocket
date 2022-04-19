@@ -119,6 +119,13 @@ func _on_Screen_logout() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	in_screen = false
+	if PlayerData.see_advanced_move:
+		$HUD.show_move_advanced_instructions()
+		PlayerData.see_advanced_move = false
 
 func end_game() -> void:
 	$HUD.exit_game()
+
+func _on_Screen_advance_knowledge() -> void:
+	PlayerData.ending_choice = 1
+	end_game()

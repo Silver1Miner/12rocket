@@ -44,6 +44,7 @@ material/0 = null
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
+[connection signal="advance_knowledge" from="HUD/Screen" to="." method="_on_Screen_advance_knowledge"]
 [connection signal="logout" from="HUD/Screen" to="." method="_on_Screen_logout"]
 [connection signal="unpaused" from="HUD/Pause" to="." method="_on_Pause_unpaused"]
 

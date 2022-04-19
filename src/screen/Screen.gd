@@ -1,6 +1,7 @@
 extends Control
 
 signal logout()
+signal advance_knowledge()
 
 func _ready() -> void:
 	if OS.has_environment("USERNAME"):
@@ -52,3 +53,6 @@ func _on_ToMessages_pressed() -> void:
 	$CCTV.visible = false
 	$Calendar.visible = false
 	$Inbox.visible = true
+
+func _on_CCTV_advance_knowledge() -> void:
+	emit_signal("advance_knowledge")

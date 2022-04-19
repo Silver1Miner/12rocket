@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/menu/EndingCard.gd" type="Script" id=2]
-[ext_resource path="res://assets/ending/news-clip.PNG" type="Texture" id=3]
+[ext_resource path="res://assets/ending/message-small.PNG" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001

@@ -9,6 +9,7 @@ var sound_db = 0.1
 var game_started := false
 var camera2_unlocked := false
 var camera3_unlocked := false
+var see_advanced_move := false
 var unlocked_doors = [false, false]
 var ending_choice := 0
 var game_route := 2
@@ -33,6 +34,7 @@ func reset() -> void:
 	camera2_unlocked = false
 	camera3_unlocked = false
 	unlocked_doors = [false, false]
+	see_advanced_move = false
 	ending_choice = 0
 	previous_route = game_route
 	if game_route < 2:

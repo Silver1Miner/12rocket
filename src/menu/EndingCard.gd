@@ -2,7 +2,7 @@ extends Control
 
 onready var fade_animation = $Fade/AnimationPlayer
 var ending_cards := [
-	preload("res://assets/ending/message.PNG"),
+	preload("res://assets/ending/message-small.PNG"),
 	preload("res://assets/ending/news-clip.PNG"),
 	preload("res://assets/ending/tragedy.PNG")
 ]

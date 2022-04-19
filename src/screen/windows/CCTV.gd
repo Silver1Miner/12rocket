@@ -17,12 +17,13 @@ onready var _door1choice = $Unlock/UnlockChoice/DoorUnlock1
 onready var _door2choice = $Unlock/UnlockChoice/DoorUnlock2
 
 signal camera_used(camera_id)
+signal advance_knowledge()
 
 func _ready() -> void:
 	update_lock_status()
 
 func _on_close_pressed() -> void:
-	_feed.texture =PlayerData.camera_feed[0]
+	_feed.texture = PlayerData.camera_feed[0]
 	visible = false
 
 func _on_CameraUnlock_pressed() -> void:
@@ -31,12 +32,12 @@ func _on_CameraUnlock_pressed() -> void:
 func _on_Camera1_pressed() -> void:
 	_feed.texture =PlayerData.camera_feed[0]
 	_feed_cover.visible = false
-	Music.play_sound("switch")
+	#Music.play_sound("switch")
 	emit_signal("camera_used", 1)
 
 func _on_Camera2_pressed() -> void:
 	if PlayerData.camera2_unlocked:
-		Music.play_sound("switch")
+		#Music.play_sound("switch")
 		if PlayerData.unlocked_doors[0]:
 			_feed.texture = PlayerData.camera_feed[3]
 		else:
@@ -48,7 +49,7 @@ func _on_Camera2_pressed() -> void:
 
 func _on_Camera3_pressed() -> void:
 	if PlayerData.camera3_unlocked:
-		Music.play_sound("switch")
+		#Music.play_sound("switch")
 		_feed.texture = PlayerData.camera_feed[2]
 		_feed_cover.visible = false
 		emit_signal("camera_used", 3)
@@ -111,18 +112,28 @@ func _on_NumLock_check_value(current_value) -> void:
 			if current_value == PlayerData.unlock_codes[0][PlayerData.game_route]:
 				PlayerData.camera2_unlocked = true
 				Music.play_sound("unlock")
+			elif current_value == PlayerData.unlock_codes[0][PlayerData.previous_route]:
+				emit_signal("advance_knowledge")
+				Music.play_sound("error")
 			else:
 				Music.play_sound("error")
 		1:
 			if current_value == PlayerData.unlock_codes[1][PlayerData.game_route]:
-				PlayerData.camera3_unlocked = true
-				Music.play_sound("unlock")
+				if PlayerData.unlocked_doors[0]:
+					PlayerData.camera3_unlocked = true
+					Music.play_sound("unlock")
+				else:
+					emit_signal("advance_knowledge")
 			else:
 				Music.play_sound("error")
 		2:
 			if current_value == PlayerData.unlock_codes[2][PlayerData.game_route]:
-				PlayerData.unlocked_doors[0] = true
-				Music.play_sound("unlock")
+				if PlayerData.camera2_unlocked:
+					PlayerData.unlocked_doors[0] = true
+					Music.play_sound("unlock")
+					PlayerData.see_advanced_move = true
+				else:
+					emit_signal("advance_knowledge")
 			else:
 				Music.play_sound("error")
 		3:
