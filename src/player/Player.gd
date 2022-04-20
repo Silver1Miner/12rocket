@@ -129,3 +129,11 @@ func end_game() -> void:
 func _on_Screen_advance_knowledge() -> void:
 	PlayerData.ending_choice = 1
 	end_game()
+
+func play_audio_cue(audio_id) -> void:
+	$Cue.stream = audio_cues[audio_id]
+	$Cue.play()
+
+var audio_cues = [
+	preload("res://assets/audio/cues/footstep00.ogg"),
+]

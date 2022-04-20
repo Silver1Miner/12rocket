@@ -29,30 +29,42 @@ func _on_close_pressed() -> void:
 func _on_CameraUnlock_pressed() -> void:
 	_unlock.visible = true
 
+var current_camera := 0
 func _on_Camera1_pressed() -> void:
-	_feed.texture =PlayerData.camera_feed[0]
 	_feed_cover.visible = false
-	#Music.play_sound("switch")
 	emit_signal("camera_used", 1)
+	if current_camera == 1:
+		return
+	_feed.texture = PlayerData.camera_feed[0]
+	current_camera = 1
 
 func _on_Camera2_pressed() -> void:
 	if PlayerData.camera2_unlocked:
-		#Music.play_sound("switch")
+		emit_signal("camera_used", 2)
+		if current_camera == 2:
+			return
+		current_camera = 2
 		if PlayerData.unlocked_doors[0]:
-			_feed.texture = PlayerData.camera_feed[3]
+			_feed.texture = PlayerData.camera_feed[2]
 		else:
 			_feed.texture = PlayerData.camera_feed[1]
 		_feed_cover.visible = false
-		emit_signal("camera_used", 2)
 	else:
 		Music.play_sound("error")
 
+var camera_3_used = false
 func _on_Camera3_pressed() -> void:
 	if PlayerData.camera3_unlocked:
-		#Music.play_sound("switch")
-		_feed.texture = PlayerData.camera_feed[2]
-		_feed_cover.visible = false
 		emit_signal("camera_used", 3)
+		if current_camera == 3:
+			return
+		current_camera = 3
+		if camera_3_used:
+			_feed.texture = PlayerData.camera_feed[4]
+		else:
+			_feed.texture = PlayerData.camera_feed[3]
+			camera_3_used = true
+		_feed_cover.visible = false
 	else:
 		Music.play_sound("error")
 
@@ -110,8 +122,11 @@ func _on_NumLock_check_value(current_value) -> void:
 	match unlock_target:
 		0:
 			if current_value == PlayerData.unlock_codes[0][PlayerData.game_route]:
-				PlayerData.camera2_unlocked = true
-				Music.play_sound("unlock")
+				if PlayerData.got_first_code:
+					PlayerData.camera2_unlocked = true
+					Music.play_sound("unlock")
+				else:
+					emit_signal("advance_knowledge")
 			elif current_value == PlayerData.unlock_codes[0][PlayerData.previous_route]:
 				emit_signal("advance_knowledge")
 				Music.play_sound("error")

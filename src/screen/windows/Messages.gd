@@ -38,6 +38,8 @@ func populate_content(index: int) -> void:
 	else:
 		content.text = emails[index+current_hide]["text"]
 	content.scroll_to_line(0)
+	if emails[index+current_hide]["title"] == "Camera Pass":
+		PlayerData.got_first_code = true
 
 func _on_Headings_item_selected(index: int) -> void:
 	populate_content(index)
@@ -61,8 +63,7 @@ THIS IS NOT A DRILL.""",
 
 We are guests of this facility, invited to serve a very specific purpose.
 
-Respect the privacy of our clients. NEVER attempt to unlock systems that are not in your jurisdiction.
-""",
+Respect the privacy of our clients. NEVER attempt to unlock systems that are not in your jurisdiction.""",
 	},
 	{
 		"title": "Camera Pass",
@@ -70,18 +71,19 @@ Respect the privacy of our clients. NEVER attempt to unlock systems that are not
 		"text": [
 """Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
 
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad: 1234
+Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
+1234
 
 Yes, I know, not a very secure passcode. It's not up to us unfortunately.
 """,
 """Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
 
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad: 2345
-""",
+Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
+2345""",
 """Hey, sorry, but I just realized that camera 2 is locked by default and you never got the security passcode.
 
-Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad: 3456
-""",
+Go to the Locks section on the CCTV interface, select camera 2, and enter the code into the lockpad:
+3456""",
 ]
 	},
 	{
@@ -94,7 +96,7 @@ The job is really simple: use the CCTV window to keep an eye on the security cam
 
 Your computer terminal should already be set up for you. Just keep watch on cameras 1 and 2.
 
-The terminal also contains a camera 3, but just ignore that one. It's not under your jursidiction.
+The terminal also contains a camera 3, but ignore that one. It's not under your jursidiction.
 
 -Briggs""",
 	},
@@ -109,8 +111,7 @@ With these new clients, employees are ONLY able to receive messages, without abi
 Any complaints or concerns can be sent or forwarded to Human Resources.
 
 --
-This is an automated message from an unattended inbox. Do not reply.
-""",
+This is an automated message from an unattended inbox. Do not reply.""",
 	},
 	{
 		"title": "To: Rocket Security LLC",
@@ -126,8 +127,7 @@ If an unqualified officer is used to terminate an employee, said officer may nee
 
 --
 B. Russel
-Chief Operations Officer
-""",
+Chief Operations Officer""",
 	},
 	{
 		"title": "A Warning",
@@ -152,8 +152,7 @@ They WILL notice if you know something that you shouldn't know.""",
 
 Needless to say, it is completely unaccetable to have such a sensitive piece of equipment unaccounted for. The security officer in charge has already been terminated.
 
-If any security officer finds the missing equipment, return it to its designated security station immediately.
-""",
+If any security officer finds the missing equipment, return it to its designated security station immediately.""",
 	},
 		{
 		"title": "Kaprekar's Constant",
@@ -163,8 +162,8 @@ If any security officer finds the missing equipment, return it to its designated
 2. Arrange the digits in descending order and ascending order to form two numbers, adding leading zeroes as necessary.
 3. Subtract the smaller number from the bigger number.
 4. Return to step 2 and repeat.
-When the series converges, you know what must be done.
-""",
+
+When the series converges, I will meet you in the lounge. You know what must be done.""",
 	},
 		{
 		"title": "Return to Electric Lighting",
@@ -177,9 +176,8 @@ Following extensive feedback, the facility has reverted from gas powered lightin
 This decision was not influenced by any rumors of gas poisoning or missing personnel, which, as we continue to remind you, are false.
 
 --
-This is an automated message from an unattended inbox. Do not reply.
-""",
-	},
+This is an automated message from an unattended inbox. Do not reply.""",
+},
 
 ]
 

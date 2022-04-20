@@ -10,6 +10,7 @@ var game_started := false
 var camera2_unlocked := false
 var camera3_unlocked := false
 var see_advanced_move := false
+var got_first_code := false
 var unlocked_doors = [false, false]
 var ending_choice := 0
 var game_route := 2
@@ -18,8 +19,9 @@ var previous_route := 0
 var camera_feed = [
 	preload("res://assets/screen/video/hall-view.PNG"),
 	preload("res://assets/screen/video/lab-view1.PNG"),
-	preload("res://assets/screen/video/hall-view.PNG"),
-	preload("res://assets/screen/video/lab-view2.PNG")
+	preload("res://assets/screen/video/lab-view2.PNG"),
+	preload("res://assets/screen/video/warning.jpg"),
+	preload("res://assets/screen/video/lab-gnome.jpg")
 ]
 
 var unlock_codes = [
@@ -35,6 +37,7 @@ func reset() -> void:
 	camera3_unlocked = false
 	unlocked_doors = [false, false]
 	see_advanced_move = false
+	got_first_code = false
 	ending_choice = 0
 	previous_route = game_route
 	if game_route < 2:

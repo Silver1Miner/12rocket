@@ -148,7 +148,8 @@ rect_min_size = Vector2( 200, 150 )
 text = "W - Move Forward
 S - Move Back
 A - Move Left
-D - Move Right"
+D - Move Right
+E - Use"
 valign = 1
 
 [node name="MoveAdvanced" type="Label" parent="Status"]

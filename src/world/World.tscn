@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/doors/DoubleSlidingDoor.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/world/props/GunDesk.tscn" type="PackedScene" id=7]
 [ext_resource path="res://textures/office/Redplanks_Texture.png" type="Texture" id=8]
 [ext_resource path="res://textures/office/Beigewall_Texture.png" type="Texture" id=9]
+[ext_resource path="res://src/world/cues/AudioCue.tscn" type="PackedScene" id=10]
 [ext_resource path="res://textures/office/Wood2_Texture.png" type="Texture" id=11]
 [ext_resource path="res://textures/office/Rug2_Texture.png" type="Texture" id=12]
 [ext_resource path="res://textures/office/Rug4_Texture.png" type="Texture" id=13]
@@ -387,29 +388,34 @@ transform = Transform( 2, 0, 0, 0, 3, 0, 0, 0, 4, 14.5, 0, 8.25227 )
 transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -8, 0, -5 )
 
 [node name="Chair" parent="Props" instance=ExtResource( 22 )]
-transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 10, 0, 0 )
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 10.177, 0, -0.251814 )
 
 [node name="Table" parent="Props" instance=ExtResource( 23 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, 14, 0, 6 )
+transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 2, 13.5, 0, 6 )
 
 [node name="Table2" parent="Props" instance=ExtResource( 23 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, 15, 0, -1 )
 
 [node name="Table3" parent="Props" instance=ExtResource( 23 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, 14, 0, 3 )
+transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 2, 13.5, 0, 3 )
 
 [node name="Stool" parent="Props" instance=ExtResource( 24 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 13, 0, 5 )
 
 [node name="Camera" parent="Props" instance=ExtResource( 25 )]
-transform = Transform( 3.62278, -1.56872, 3.06832, 0, 4.4519, 2.27609, -3.44608, -1.64916, 3.22565, 14.9706, 3.86516, 8.98732 )
+transform = Transform( 4.34734, -1.88246, 3.68198, 0, 5.34228, 2.73131, -4.1353, -1.97899, 3.87078, 14.9706, 3.81955, 8.98732 )
 
 [node name="Camera2" parent="Props" instance=ExtResource( 25 )]
-transform = Transform( -3.87506, -1.43837, 2.81336, 0, 4.4519, 2.27609, -3.15973, 1.764, -3.45027, 7.89623, 3.83962, -5.96258 )
+transform = Transform( -4.65007, -1.72604, 3.37603, 0, 5.34228, 2.73131, -3.79168, 2.1168, -4.14033, 7.94952, 3.77481, -5.91292 )
 
 [node name="Zombie" parent="Props" instance=ExtResource( 26 )]
 transform = Transform( 0.3, 0, 0, 0, 0.283971, 0.0967491, 0, -0.0967491, 0.283971, 10.245, 0.00907767, 0.102932 )
 visible = false
+
+[node name="AudioCues" type="Spatial" parent="."]
+
+[node name="AudioCue" parent="AudioCues" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="StartTrigger" to="." method="_on_StartTrigger_body_entered"]
