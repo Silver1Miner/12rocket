@@ -7,7 +7,7 @@
 [ext_resource path="res://src/screen/windows/CCTV.gd" type="Script" id=5]
 [ext_resource path="res://src/screen/windows/NumLock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/screen/grey_panel.png" type="Texture" id=7]
-[ext_resource path="res://assets/screen/video/warning.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/screen/video/hall-view-gnome.jpg" type="Texture" id=8]
 
 [node name="CCTV" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
@@ -92,6 +92,7 @@ rect_min_size = Vector2( 100, 50 )
 text = "LOCKS"
 
 [node name="Unlock" parent="." index="3" instance=ExtResource( 1 )]
+visible = false
 margin_left = 5.0
 margin_top = 32.0
 margin_right = 528.0

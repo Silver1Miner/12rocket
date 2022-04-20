@@ -21,7 +21,8 @@ var camera_feed = [
 	preload("res://assets/screen/video/lab-view1.PNG"),
 	preload("res://assets/screen/video/lab-view2.PNG"),
 	preload("res://assets/screen/video/warning.jpg"),
-	preload("res://assets/screen/video/lab-gnome.jpg")
+	preload("res://assets/screen/video/lab-gnome.jpg"),
+	preload("res://assets/screen/video/hall-view-gnome.jpg")
 ]
 
 var unlock_codes = [

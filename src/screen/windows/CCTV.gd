@@ -35,7 +35,11 @@ func _on_Camera1_pressed() -> void:
 	emit_signal("camera_used", 1)
 	if current_camera == 1:
 		return
-	_feed.texture = PlayerData.camera_feed[0]
+	randomize()
+	if rand_range(1,5) < 4:
+		_feed.texture = PlayerData.camera_feed[0]
+	else:
+		_feed.texture = PlayerData.camera_feed[5]
 	current_camera = 1
 
 func _on_Camera2_pressed() -> void:
