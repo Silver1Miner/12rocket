@@ -16,6 +16,11 @@ export var has_rocket_launcher = false
 func _ready() -> void:
 	if !in_screen:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if has_rocket_launcher:
+		$HUD.enter_combat_view()
+		$Pivot/RocketLauncher.visible = true
+	else:
+		$Pivot/RocketLauncher.visible = false
 	yield(get_tree().create_timer(1.0), "timeout")
 	$HUD.show_move_instructions()
 
@@ -99,6 +104,8 @@ func interact():
 				enter_screen()
 			elif target.prop_name == "Rocket":
 				has_rocket_launcher = true
+				$HUD.enter_combat_view()
+				$Pivot/RocketLauncher.visible = true
 				target.on_Player_interact()
 		elif target.has_method("on_Player_interact"):
 			target.on_Player_interact()

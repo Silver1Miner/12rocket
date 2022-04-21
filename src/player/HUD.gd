@@ -8,6 +8,9 @@ func _ready() -> void:
 	$Status/Move.visible = false
 	$Status/MoveAdvanced.visible = false
 
+func enter_combat_view() -> void:
+	$Combat.visible = true
+
 func update_label(new_text: String) -> void:
 	_label.text = new_text
 
