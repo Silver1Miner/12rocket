@@ -126,11 +126,11 @@ func _on_NumLock_check_value(current_value) -> void:
 	match unlock_target:
 		0:
 			if current_value == PlayerData.unlock_codes[0][PlayerData.game_route]:
-				if PlayerData.got_first_code:
-					PlayerData.camera2_unlocked = true
-					Music.play_sound("unlock")
-				else:
-					emit_signal("advance_knowledge")
+				#if PlayerData.got_first_code:
+				PlayerData.camera2_unlocked = true
+				Music.play_sound("unlock")
+				#else:
+				#	emit_signal("advance_knowledge")
 			elif current_value == PlayerData.unlock_codes[0][PlayerData.previous_route]:
 				emit_signal("advance_knowledge")
 				Music.play_sound("error")

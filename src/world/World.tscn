@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/doors/DoubleSlidingDoor.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://src/world/props/Camera.tscn" type="PackedScene" id=25]
 [ext_resource path="res://src/characters/Zombie.tscn" type="PackedScene" id=26]
 [ext_resource path="res://assets/signs/8128.png" type="Texture" id=27]
+[ext_resource path="res://assets/audio/256607__pearcewilsonking__spooky-wind.ogg" type="AudioStream" id=28]
 
 [sub_resource type="SpatialMaterial" id=2]
 
@@ -414,8 +415,29 @@ visible = false
 
 [node name="AudioCues" type="Spatial" parent="."]
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioCues"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4566, 2.91428, 0 )
+stream = ExtResource( 28 )
+autoplay = true
+
 [node name="AudioCue" parent="AudioCues" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3 )
+
+[node name="AudioCue2" parent="AudioCues" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0379, 0, -0.206972 )
+audio_id = 1
+
+[node name="AudioCue3" parent="AudioCues" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92343, 0, -4.71577 )
+audio_id = 2
+
+[node name="AudioCue4" parent="AudioCues" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1432, 0, 7.7744 )
+audio_id = 3
+
+[node name="AudioCue5" parent="AudioCues" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290225, 0, 3.60665 )
+audio_id = 4
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="StartTrigger" to="." method="_on_StartTrigger_body_entered"]

@@ -38,15 +38,15 @@ func _on_CCTV_camera_used(camera_id) -> void:
 	if camera_id == 1 and c1_unused:
 		c1_unused = false
 		randomize()
-		$Timer.start(10)
+		$Timer.start(3)
 	if camera_id == 2 and c2_unused:
 		c2_unused = false
 		randomize()
-		$Timer.start(rand_range(10,20))
+		$Timer.start(rand_range(5,10))
 	elif camera_id == 3 and c3_unused:
 		c3_unused = false
 		randomize()
-		$Timer.start(rand_range(10,20))
+		$Timer.start(rand_range(5,10))
 
 func _on_ToMessages_pressed() -> void:
 	$Alert.visible = false

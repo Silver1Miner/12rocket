@@ -149,6 +149,10 @@ func play_audio_cue(audio_id) -> void:
 
 var audio_cues = [
 	preload("res://assets/audio/cues/footstep00.ogg"),
+	preload("res://assets/audio/cues/gasp1.ogg"),
+	preload("res://assets/audio/cues/laugh1.ogg"),
+	preload("res://assets/audio/cues/scared-breathing.ogg"),
+	preload("res://assets/audio/cues/freakedbreath.ogg")
 ]
 
 func take_damage(damage_value) -> void:

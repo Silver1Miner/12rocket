@@ -42,7 +42,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Cue" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3 )
 bus = "Sound"
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
