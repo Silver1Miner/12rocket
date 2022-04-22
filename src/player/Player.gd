@@ -12,6 +12,7 @@ var is_sprinting = false
 var jump_speed = 8
 export var in_screen = false
 export var has_rocket_launcher = false
+var outside_forces: Vector3
 
 func _ready() -> void:
 	if !in_screen:
@@ -23,6 +24,9 @@ func _ready() -> void:
 		$Pivot/RocketLauncher.visible = false
 	yield(get_tree().create_timer(1.0), "timeout")
 	$HUD.show_move_instructions()
+
+func add_outside_force(force: Vector3):
+	outside_forces += force
 
 func get_input():
 	if in_screen:
@@ -81,8 +85,10 @@ func _physics_process(delta):
 		desired_velocity *= sprint_multiplier
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
+	velocity += outside_forces
 	velocity = move_and_slide_with_snap(velocity, Vector3(0,velocity.y,0), Vector3.UP, true)
 	check_raycast()
+	outside_forces = Vector3.ZERO
 
 func check_raycast():
 	if _raycast.is_colliding():
@@ -144,3 +150,6 @@ func play_audio_cue(audio_id) -> void:
 var audio_cues = [
 	preload("res://assets/audio/cues/footstep00.ogg"),
 ]
+
+func take_damage(damage_value) -> void:
+	print(damage_value)

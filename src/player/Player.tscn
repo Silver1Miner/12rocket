@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://src/player/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/player/weapons/RocketLauncher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/weapons/RocketLauncher.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.4

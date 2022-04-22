@@ -1,6 +1,6 @@
 extends Spatial
 
-export var rocket = preload("res://src/player/weapons/Rocket.tscn")
+export var rocket = preload("res://src/weapons/Rocket.tscn")
 var can_shoot = true
 onready var muzzle = $Muzzle
 onready var aimcast = $RayCast

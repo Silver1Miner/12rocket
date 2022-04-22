@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/player/weapons/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://src/weapons/Explosion.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/Splode.ogg" type="AudioStream" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
@@ -17,6 +17,7 @@ offsets = PoolRealArray( 0.00438596, 0.473684, 0.995614, 1 )
 colors = PoolColorArray( 0.267578, 0.15992, 0, 1, 1, 0.902344, 0, 0.811765, 0.466797, 0.412518, 0, 1, 0, 0, 0, 0.529412 )
 
 [sub_resource type="SphereShape" id=4]
+radius = 1.5
 
 [node name="Explosion" type="Spatial"]
 script = ExtResource( 1 )
