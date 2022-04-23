@@ -16,6 +16,7 @@ var unlocked_doors = [false, false]
 var ending_choice := 0
 var game_route := 2
 var previous_route := 0
+var player_location := Vector3.ZERO
 
 var camera_feed = [
 	preload("res://assets/screen/video/hall-view.PNG"),

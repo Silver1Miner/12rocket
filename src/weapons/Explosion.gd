@@ -15,11 +15,14 @@ func _on_Area_body_entered(body: Node) -> void:
 		body.take_damage(damage)
 	if body.has_method("add_outside_force"):
 		var vector = body.get_global_transform().origin - get_global_transform().origin
-		if not body.is_on_floor():
-			body.add_outside_force(vector * 10)
-		else:
+		if body.is_in_group("enemy"):
 			body.add_outside_force(vector * 2)
-		print(vector * 10)
+		elif body.is_in_group("player"):
+			if not body.is_on_floor():
+				body.add_outside_force(vector * 10)
+			else:
+				body.add_outside_force(vector * 2)
+		#print(vector * 10)
 	if body.has_method("apply_impulse"):
 		var pos = get_global_transform().origin
 		var vector = body.get_global_transform().origin - pos
