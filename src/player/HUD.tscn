@@ -150,7 +150,7 @@ text = "W - Move Forward
 S - Move Back
 A - Move Left
 D - Move Right
-E - Use"
+E/Mouse1 - Use"
 valign = 1
 
 [node name="MoveAdvanced" type="Label" parent="Status"]

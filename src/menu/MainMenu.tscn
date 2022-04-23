@@ -134,11 +134,19 @@ rect_min_size = Vector2( 200, 50 )
 text = "Settings"
 
 [node name="Achievements" type="Button" parent="Options"]
+visible = false
 margin_top = 124.0
 margin_right = 200.0
 margin_bottom = 174.0
 rect_min_size = Vector2( 200, 50 )
 text = "Achievements"
+
+[node name="Arena" type="Button" parent="Options"]
+margin_top = 124.0
+margin_right = 200.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 200, 50 )
+text = "Survival Mode"
 
 [node name="Quit" type="Button" parent="Options"]
 margin_top = 186.0
@@ -196,4 +204,5 @@ anims/fadein = SubResource( 3 )
 [connection signal="pressed" from="Options/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Options/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Options/Achievements" to="." method="_on_Achievements_pressed"]
+[connection signal="pressed" from="Options/Arena" to="." method="_on_Arena_pressed"]
 [connection signal="pressed" from="Options/Quit" to="." method="_on_Quit_pressed"]
