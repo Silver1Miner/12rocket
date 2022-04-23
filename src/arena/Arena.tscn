@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=3]
-[ext_resource path="res://src/characters/Zombie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/characters/Orc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/world/physicsprops/PhysicsChair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/world/physicsprops/PhysicsTable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -50,16 +51,18 @@ points = PoolVector3Array( -6, 0, -17, 12, 7, -17, 12, 8, -17, -6, 1, -17, -6, 1
 
 [node name="Arena" type="Spatial"]
 
+[node name="PhysicsTable" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7437, 1.08153, -3.94878 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 has_rocket_launcher = true
 
-[node name="Zombie" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53213, -7.04068 )
-visible = false
-
 [node name="PhysicsChair" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86209, -2.44056 )
+
+[node name="Orc" parent="." instance=ExtResource( 4 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 3.30021, -5.0767 )
 
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 1 )
