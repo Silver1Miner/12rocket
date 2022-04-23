@@ -12,6 +12,8 @@ var is_sprinting = false
 var jump_speed = 8
 export var in_screen = false
 export var has_rocket_launcher = false
+export var has_rocket_limit = false
+var rocket_count = 0
 var outside_forces: Vector3
 
 func _ready() -> void:
@@ -63,6 +65,10 @@ func _input(event):
 	if event.is_action_pressed("shoot"):
 		if has_rocket_launcher:
 			$Pivot/RocketLauncher.shoot()
+			rocket_count += 1
+			if has_rocket_limit and rocket_count > 3:
+				PlayerData.ending_choice = 2
+				end_game()
 		else:
 			interact()
 			get_tree().set_input_as_handled()
