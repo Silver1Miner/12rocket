@@ -36,7 +36,7 @@ func _on_Camera1_pressed() -> void:
 	if current_camera == 1:
 		return
 	randomize()
-	if rand_range(1,5) < 4:
+	if rand_range(1,10) < 9:
 		_feed.texture = PlayerData.camera_feed[0]
 	else:
 		_feed.texture = PlayerData.camera_feed[5]

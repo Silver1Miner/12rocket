@@ -104,7 +104,7 @@ The terminal also contains a camera 3, but ignore that one. It's not under your 
 		"title": "Changes to Email System",
 		"from": "Human Resources",
 		"text":
-"""Following the success of our pilot program in which we disabled reply and forwarding functions of email clients, we are proud to announce we have expanded the program by replacing all email clients with new recepit-only inbox systems.
+"""Following the success of our pilot program in which we disabled reply and forwarding functions of email clients, we are proud to announce we have expanded the program by replacing all email clients with new receipt-only inbox systems.
 
 With these new clients, employees are ONLY able to receive messages, without ability to reply, forward, or send messages.
 
