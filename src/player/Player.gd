@@ -12,9 +12,10 @@ var is_sprinting = false
 var jump_speed = 8
 export var in_screen = false
 export var has_rocket_launcher = false
-export var has_rocket_limit = false
-var rocket_count = 0
 var outside_forces: Vector3
+export var hp = 100
+export var ammo = 10
+export var rocket_limit = false
 
 func _ready() -> void:
 	if !in_screen:
@@ -65,8 +66,8 @@ func _input(event):
 	if event.is_action_pressed("shoot"):
 		if has_rocket_launcher:
 			$Pivot/RocketLauncher.shoot()
-			rocket_count += 1
-			if has_rocket_limit and rocket_count > 3:
+			$HUD.update_ammo($Pivot/RocketLauncher.ammo)
+			if rocket_limit and $Pivot/RocketLauncher.ammo == 0:
 				PlayerData.ending_choice = 2
 				end_game()
 		else:
@@ -161,5 +162,9 @@ var audio_cues = [
 	preload("res://assets/audio/cues/freakedbreath.ogg")
 ]
 
-func take_damage(damage_value) -> void:
-	print(damage_value)
+func take_damage(damage: int) -> void:
+	hp = clamp(hp - damage, 0, 100)
+	$HUD.update_hp(hp)
+	if hp <= 0:
+		PlayerData.ending_choice = 3
+		end_game()

@@ -30,3 +30,9 @@ func exit_game() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if get_tree().change_scene_to(PlayerData.ending) != OK:
 		push_error("failed to go to ending")
+
+func update_hp(hp: int) -> void:
+	$Combat/HP.text = "HP: " + str(hp)
+
+func update_ammo(ammo: int) -> void:
+	$Combat/Ammo.text = str(ammo)

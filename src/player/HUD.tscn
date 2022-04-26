@@ -188,7 +188,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -40.0
 margin_top = -23.0
-text = "20"
+text = "3"
+clip_text = true
 
 [node name="Crosshair" type="TextureRect" parent="Combat"]
 anchor_left = 0.5

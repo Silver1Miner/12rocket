@@ -121,43 +121,44 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -100.0
-margin_top = -260.0
+margin_top = -250.0
 margin_right = 100.0
+margin_bottom = -54.0
 custom_constants/separation = 12
 
 [node name="Start" type="Button" parent="Options"]
 margin_right = 200.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 200, 50 )
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
 text = "New Game"
 
 [node name="Settings" type="Button" parent="Options"]
-margin_top = 62.0
+margin_top = 52.0
 margin_right = 200.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 200, 50 )
+margin_bottom = 92.0
+rect_min_size = Vector2( 200, 40 )
 text = "Settings"
 
 [node name="Achievements" type="Button" parent="Options"]
 visible = false
-margin_top = 124.0
+margin_top = 104.0
 margin_right = 200.0
-margin_bottom = 174.0
-rect_min_size = Vector2( 200, 50 )
+margin_bottom = 144.0
+rect_min_size = Vector2( 200, 40 )
 text = "Achievements"
 
 [node name="Arena" type="Button" parent="Options"]
-margin_top = 124.0
+margin_top = 104.0
 margin_right = 200.0
-margin_bottom = 174.0
-rect_min_size = Vector2( 200, 50 )
-text = "Rocket Mode"
+margin_bottom = 144.0
+rect_min_size = Vector2( 200, 40 )
+text = "Survival"
 
 [node name="Quit" type="Button" parent="Options"]
-margin_top = 186.0
+margin_top = 156.0
 margin_right = 200.0
-margin_bottom = 236.0
-rect_min_size = Vector2( 200, 50 )
+margin_bottom = 196.0
+rect_min_size = Vector2( 200, 40 )
 text = "Quit"
 
 [node name="Title" type="HBoxContainer" parent="."]
@@ -204,10 +205,10 @@ text = "Copyright (c) 2021 Jack Anderson "
 [node name="Version" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -91.0
+margin_left = -84.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 6 )
-text = "v 0.1.0 Demo "
+text = "v0.1.0 Demo "
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
 visible = false

@@ -15,6 +15,9 @@ func _ready() -> void:
 	elif PlayerData.ending_choice == 2:
 		$Label.text = "Rocket Launcher Ending"
 		$TextureRect.texture = ending_cards[2]
+	elif PlayerData.ending_choice == 3:
+		$Label.text = "Defeat Ending"
+		$TextureRect.texture = ending_cards[2]
 	else:
 		$Label.text = "Elevator Ending"
 		$TextureRect.texture = ending_cards[1]

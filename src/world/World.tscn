@@ -211,7 +211,7 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-has_rocket_limit = true
+rocket_limit = true
 
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 3 )

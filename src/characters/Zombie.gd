@@ -10,6 +10,9 @@ var speed := 2
 var active = true
 onready var nav = get_parent()
 onready var player = $"../../Player"
+export var hp = 20
+
+signal destroyed()
 
 func _ready() -> void:
 	if not player or not nav:
@@ -43,3 +46,9 @@ func move_to(target_pos) -> void:
 func _on_Timer_timeout() -> void:
 	if active:
 		move_to(player.global_transform.origin)
+
+func take_damage(damage: int) -> void:
+	hp = clamp(hp - damage, 0, 20)
+	if hp <= 0:
+		emit_signal("destroyed")
+		queue_free()

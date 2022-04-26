@@ -1,6 +1,6 @@
 extends Spatial
 
-export var damage = 80
+export var damage = 20
 
 func _ready() -> void:
 	$CPUParticles.emitting = true
