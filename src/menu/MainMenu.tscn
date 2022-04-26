@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,12 +8,17 @@
 [ext_resource path="res://src/menu/AchievementMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/screen/video/hall-view.PNG" type="Texture" id=7]
 [ext_resource path="res://src/screen/windows/CRT.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/CourierPrime-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="DynamicFont" id=5]
 size = 36
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 9 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -146,7 +151,7 @@ margin_top = 124.0
 margin_right = 200.0
 margin_bottom = 174.0
 rect_min_size = Vector2( 200, 50 )
-text = "Survival Mode"
+text = "Rocket Mode"
 
 [node name="Quit" type="Button" parent="Options"]
 margin_top = 186.0
@@ -185,6 +190,24 @@ margin_top = 76.0
 margin_right = 565.0
 margin_bottom = 104.0
 text = "LLC"
+
+[node name="Copyright" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -231.0
+margin_top = -15.0
+custom_fonts/font = SubResource( 6 )
+text = "Copyright (c) 2021 Jack Anderson "
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -91.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 6 )
+text = "v 0.1.0 Demo "
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
 visible = false

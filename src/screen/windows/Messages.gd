@@ -166,6 +166,17 @@ If any security officer finds the missing equipment, return it to its designated
 When the series converges, I will meet you in the lounge. You know what must be done.""",
 	},
 		{
+		"title": "Re: Missing Mannequins",
+		"from": "Facility Operations Manager",
+		"text":
+"""Long-term storage reports that several display mannequins previously loaned out to labs 42, 46, and 49 are still unaccounted for.
+
+If anyone should find a mannequin, please report its location to security immediately. For your own personal safety, DO NOT handle the mannequins yourself.
+
+--
+This is an automated message from an unattended inbox. Do not reply.""",
+},
+		{
 		"title": "Return to Electric Lighting",
 		"from": "Facility Operations Manager",
 		"text":

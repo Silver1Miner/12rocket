@@ -11,4 +11,6 @@ func on_Player_interact() -> void:
 	print("player interacted with ", prop_name)
 
 func get_description() -> String:
-	return prop_description
+	if visible:
+		return prop_description
+	return ""

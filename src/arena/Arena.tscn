@@ -122,10 +122,10 @@ points = PoolVector3Array( -6, 0, -17, 12, 7, -17, 12, 8, -17, -6, 1, -17, -6, 1
 [node name="Arena" type="Spatial"]
 
 [node name="PhysicsTable" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7437, 1.08153, -4.951 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4318, 1.08153, -4.951 )
 
 [node name="PhysicsChair" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40964, -6.08321 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71975, 1.40964, -6.08321 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.97309 )
@@ -134,7 +134,7 @@ has_rocket_launcher = true
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="Zombie" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.81147, -6.80775 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8.972 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 16 )

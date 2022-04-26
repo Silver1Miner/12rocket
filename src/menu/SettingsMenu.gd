@@ -24,3 +24,6 @@ func _on_SoundVolume_value_changed(value: float) -> void:
 	)
 	if start:
 		Music.play_sound("error")
+
+func _on_CheckBox_toggled(button_pressed: bool) -> void:
+	OS.window_fullscreen = button_pressed

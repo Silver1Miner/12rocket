@@ -36,6 +36,7 @@ func _physics_process(delta) -> void:
 	outside_forces = Vector3.ZERO
 
 func move_to(target_pos) -> void:
+	$Mesh.look_at(Vector3(target_pos.x,global_transform.origin.y,target_pos.z), Vector3.UP)
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_node = 0
 
