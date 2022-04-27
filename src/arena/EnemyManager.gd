@@ -1,9 +1,12 @@
 extends Spatial
 
 var spawn_points := [
-	Vector3(15,8,-15),
-	Vector3(15,1,0),
-	Vector3(15,1,-15)
+	Vector3(14,8,-14),
+	Vector3(14,1,0),
+	Vector3(14,1,-14),
+	Vector3(-8,1,0),
+	Vector3(14,8,0),
+	Vector3(-8,1,-14),
 ]
 
 export (PackedScene) var zombie = preload("res://src/characters/Zombie.tscn")
@@ -26,11 +29,11 @@ func _process(_delta: float) -> void:
 
 func spawner() -> void:
 	if get_child_count() >= 10:
-		print("enemy limit reached")
+		#print("enemy limit reached")
 		return
 	else:
 		randomize()
-		var spawn_index = round(rand_range(0,2))
+		var spawn_index = round(rand_range(0,5))
 		var spawn_point = spawn_points[spawn_index]
 		spawn_enemy(spawn_point)
 		spawn_accumulated = 0

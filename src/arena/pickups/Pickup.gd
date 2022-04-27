@@ -12,7 +12,7 @@ func _on_Pickup_body_entered(body: Node) -> void:
 	if active and body.is_in_group("player"):
 		if is_health and body.has_method("restore_health"):
 			if body.hp < 100:
-				body.restore_health(50)
+				body.restore_health(20)
 				active = false
 				$MeshInstance.visible = false
 				$Timer.start(10)

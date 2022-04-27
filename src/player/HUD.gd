@@ -3,6 +3,7 @@ extends Control
 onready var _label = $Status/Label
 onready var _animation_player = $Status/AnimationPlayer
 onready var transition = $Transition/AnimationPlayer
+onready var damage_flash = $Combat/DamageColor/AnimationPlayer
 
 func _ready() -> void:
 	$Status/Move.visible = false
@@ -31,8 +32,14 @@ func exit_game() -> void:
 	if get_tree().change_scene_to(PlayerData.ending) != OK:
 		push_error("failed to go to ending")
 
+var previous_hp = 100
 func update_hp(hp: int) -> void:
 	$Combat/HP.text = "HP: " + str(hp)
+	if hp < previous_hp:
+		damage_flash.play("damage_flash")
+	elif hp > previous_hp:
+		damage_flash.play("heal_flash")
+	previous_hp = hp
 
 func update_ammo(ammo: int) -> void:
 	$Combat/Ammo.text = str(ammo)

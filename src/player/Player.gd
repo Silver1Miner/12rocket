@@ -3,8 +3,8 @@ extends KinematicBody
 onready var _raycast = $Pivot/RayCast
 onready var camera = $Pivot/Camera
 var gravity = -30
-var max_speed = 5
-var sprint_multiplier = 2
+var max_speed = 4
+var sprint_multiplier = 2.5
 var mouse_sensitivity = 0.002
 var velocity = Vector3()
 var is_jumping = false
