@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://textures/office/Rug2_Texture.png" type="Texture" id=9]
 [ext_resource path="res://textures/office/Redplanks_Texture.png" type="Texture" id=10]
 [ext_resource path="res://textures/office/Beigewall2_Texture.png" type="Texture" id=11]
+[ext_resource path="res://src/arena/pickups/Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/arena/pickups/PickupAmmo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/arena/EnemyManager.gd" type="Script" id=14]
 
 [sub_resource type="NavigationMesh" id=16]
 vertices = PoolVector3Array( -17.5, 19.4, 8.6, -17.5, 19.4, 17.3, -8.8, 19.4, 17.3, -8.8, 19.4, -17.5, -17.5, 19.4, -17.5, -17.5, 19.4, -8.8, 8.6, 19.4, 17.3, 17.6, 19.4, 17.3, 17.6, 19.4, 8.6, 17.6, 19.4, -8.8, 17.6, 19.4, -17.5, 8.6, 19.4, -17.5, -17.5, 19.4, -0.0999985, -17.5, 19.4, 8.6, -8.8, 19.4, 17.3, -0.0999985, 19.4, 17.3, -0.0999985, 19.4, -17.5, -8.8, 19.4, -17.5, -17.5, 19.4, -8.8, -17.5, 19.4, -0.0999985, 8.6, 19.4, 17.3, 17.6, 19.4, 8.6, 17.6, 19.4, -0.0999985, 17.6, 19.4, -0.0999985, 17.6, 19.4, -8.8, 8.6, 19.4, -17.5, -0.0999985, 19.4, -17.5, -17.5, 19.4, -0.0999985, -0.0999985, 19.4, 17.3, 8.6, 19.4, 17.3, 17.6, 19.4, -0.0999985, 8.6, 19.4, -17.5, -4, 2.2, -12.4, -2.2, 2.8, -12.4, -2.5, 2.8, -16.3, -9.4, 1.4, -16.3, -5.35, 1.6, -13.375, -5.95, 1.4, -16.3, 0.200001, 1.4, 0.200001, 0.200001, 1.4, -11.2, -4, 1.4, -11.2, -8.2, 1.4, 0.200001, -4, 1.4, -11.2, -4, 2.2, -12.4, -9.4, 1.4, -16.3, -16.3, 1.4, -8.2, -16.3, 1.4, 0.200001, -8.2, 1.4, 0.200001, -5.35, 1.6, -13.375, -9.4, 1.4, -16.3, -16.3, 1.4, -16.3, -16.3, 1.4, -8.2, 10.4, 7.8, -12.4, 10.7, 8, -16.3, 4.1, 5.4, -16.3, 4.1, 5.4, -12.4, 4.1, 5.4, -16.3, -2.5, 2.8, -16.3, -2.2, 2.8, -12.4, 4.1, 5.4, -12.4, 9.5, 1.4, -16.3, 2.9, 1.4, -16.3, 2.9, 1.4, -11.5, 16.4, 1.4, -8.2, 16.4, 1.4, -16.3, 9.5, 1.4, -16.3, 2.9, 1.4, -11.5, 0.200001, 1.4, 0.200001, 8.3, 1.4, 0.200001, 8.3, 1.4, 0.200001, 16.4, 1.4, 0.200001, 16.4, 1.4, -8.2, 2.9, 1.4, -11.5, 0.200001, 1.4, -11.2, 0.200001, 1.4, 0.200001, 10.7, 8, -16.3, 10.4, 7.8, -12.4, 12.5, 8.4, -12.1, 16.4, 8.4, -16.3, 10.7, 8, -16.3, 12.5, 8.4, -12.1, 16.4, 8.4, -8.2, 12.125, 8.4, -16.3, 12.5, 8.4, -6.1, 12.5, 8.4, 0.200001, 16.4, 8.4, 0.200001, 16.4, 8.4, -8.2, 16.4, 8.4, -8.2, 12.5, 8.4, -12.1, 12.5, 8.4, -6.1, -16.3, 1.4, 1.7, -16.3, 1.4, 2.3, -8.2, 1.4, 2.3, -8.2, 1.4, 1.7, 8, 1.4, 2.3, 16.4, 1.4, 2.3, 16.4, 1.4, 1.7, 8, 1.4, 1.7, -0.0999985, 1.4, 1.7, -8.2, 1.4, 1.7, -8.2, 1.4, 2.3, -0.0999985, 1.4, 2.3, -0.0999985, 1.4, 2.3, 8, 1.4, 2.3, 8, 1.4, 1.7, -0.0999985, 1.4, 1.7, -8.2, 1.4, 3.8, -16.3, 1.4, 3.8, -16.3, 1.4, 10.4, -16.3, 1.4, 10.4, -16.3, 1.4, 17.3, -8.2, 1.4, 17.3, 16.4, 1.4, 10.4, 16.4, 1.4, 3.8, 8, 1.4, 3.8, 8, 1.4, 17.3, 16.4, 1.4, 17.3, 16.4, 1.4, 10.4, 8, 1.4, 17.3, 16.4, 1.4, 10.4, 8, 1.4, 3.8, -0.0999985, 1.4, 3.8, -0.0999985, 1.4, 17.3, -8.2, 1.4, 3.8, -16.3, 1.4, 10.4, -8.2, 1.4, 17.3, -0.0999985, 1.4, 17.3, -0.0999985, 1.4, 3.8 )
@@ -124,6 +127,15 @@ points = PoolVector3Array( -6, 0, -17, 12, 7, -17, 12, 8, -17, -6, 1, -17, -6, 1
 [node name="PhysicsTable" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4318, 1.08153, -4.951 )
 
+[node name="Pickup" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, -12 )
+
+[node name="PickupAmmo" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 8, 0 )
+
+[node name="PickupAmmo2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -15 )
+
 [node name="PhysicsChair" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71975, 1.40964, -6.08321 )
 
@@ -133,7 +145,19 @@ has_rocket_launcher = true
 
 [node name="Navigation" type="Navigation" parent="."]
 
-[node name="Zombie" parent="Navigation" instance=ExtResource( 4 )]
+[node name="EnemyManager" type="Spatial" parent="Navigation"]
+script = ExtResource( 14 )
+
+[node name="Zombie4" parent="Navigation/EnemyManager" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 8, -15 )
+
+[node name="Zombie3" parent="Navigation/EnemyManager" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 0 )
+
+[node name="Zombie2" parent="Navigation/EnemyManager" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, -15 )
+
+[node name="Zombie" parent="Navigation/EnemyManager" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8.972 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
@@ -192,3 +216,5 @@ shape = SubResource( 29 )
 
 [node name="entity_0_brush_7_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 30 )
+
+[node name="Position3D" type="Position3D" parent="Navigation"]

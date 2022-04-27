@@ -168,3 +168,11 @@ func take_damage(damage: int) -> void:
 	if hp <= 0:
 		PlayerData.ending_choice = 3
 		end_game()
+
+func restore_health(health: int) -> void:
+	hp = clamp(hp + health, 0, 100)
+	$HUD.update_hp(hp)
+
+func restore_ammo(value: int) -> void:
+	$Pivot/RocketLauncher.ammo = clamp($Pivot/RocketLauncher.ammo + value, 0, 20)
+	$HUD.update_ammo($Pivot/RocketLauncher.ammo)
