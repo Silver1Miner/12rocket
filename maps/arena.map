@@ -6,12 +6,12 @@
 "_tb_textures" "textures/office"
 // brush 0
 {
-( -288 288 16 ) ( -288 -288 16 ) ( -288 -288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
-( -288 -288 16 ) ( 288 -288 16 ) ( 288 -288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
-( 288 -288 -16 ) ( 288 288 -16 ) ( -288 288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
-( -288 288 16 ) ( 288 288 16 ) ( 288 -288 16 ) office/Rug2_Texture 0 0 0 0.1 0.1
-( 288 288 -16 ) ( 288 288 16 ) ( -288 288 16 ) office/Rug2_Texture 0 0 0 0.1 0.1
-( 288 -288 16 ) ( 288 288 16 ) ( 288 288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( -320 288 16 ) ( -320 -288 16 ) ( -320 -288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( -320 -288 16 ) ( 256 -288 16 ) ( 256 -288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( 256 -288 -16 ) ( 256 288 -16 ) ( -320 288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( -320 288 16 ) ( 256 288 16 ) ( 256 -288 16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( 256 288 -16 ) ( 256 288 16 ) ( -320 288 16 ) office/Rug2_Texture 0 0 0 0.1 0.1
+( 256 -288 16 ) ( 256 288 16 ) ( 256 288 -16 ) office/Rug2_Texture 0 0 0 0.1 0.1
 }
 // brush 1
 {
@@ -51,12 +51,12 @@
 }
 // brush 5
 {
-( -288 288 304 ) ( -288 -288 304 ) ( -288 -288 272 ) office/Beigewall2_Texture 0 0 0 1 1
-( -288 -288 304 ) ( 288 -288 304 ) ( 288 -288 272 ) office/Beigewall2_Texture 0 0 0 1 1
-( 288 -288 272 ) ( 288 288 272 ) ( -288 288 272 ) office/Beigewall2_Texture 0 0 0 1 1
-( -288 288 304 ) ( 288 288 304 ) ( 288 -288 304 ) office/Beigewall2_Texture 0 0 0 1 1
-( 288 288 272 ) ( 288 288 304 ) ( -288 288 304 ) office/Beigewall2_Texture 0 0 0 1 1
-( 288 -288 304 ) ( 288 288 304 ) ( 288 288 272 ) office/Beigewall2_Texture 0 0 0 1 1
+( -288 288 240 ) ( -288 -288 240 ) ( -288 -288 208 ) office/Beigewall2_Texture 0 0 0 1 1
+( -288 -288 240 ) ( 288 -288 240 ) ( 288 -288 208 ) office/Beigewall2_Texture 0 0 0 1 1
+( 288 -288 208 ) ( 288 288 208 ) ( -288 288 208 ) office/Beigewall2_Texture 0 0 0 1 1
+( -288 288 240 ) ( 288 288 240 ) ( 288 -288 240 ) office/Beigewall2_Texture 0 0 0 1 1
+( 288 288 208 ) ( 288 288 240 ) ( -288 288 240 ) office/Beigewall2_Texture 0 0 0 1 1
+( 288 -288 240 ) ( 288 288 240 ) ( 288 288 208 ) office/Beigewall2_Texture 0 0 0 1 1
 }
 // brush 6
 {
@@ -75,5 +75,32 @@
 ( -192 -96 0 ) ( -192 192 112 ) ( -272 192 112 ) office/Wood2_Texture 0 0 0 1 1
 ( -192 192 112 ) ( -192 192 128 ) ( -272 192 128 ) office/Wood2_Texture 0 0 0 1 1
 ( -192 -96 16 ) ( -192 192 128 ) ( -192 192 112 ) office/Wood2_Texture 0 0 0 1 1
+}
+// brush 8
+{
+( -128 -64 208 ) ( -128 -144 208 ) ( -128 -144 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -128 -144 208 ) ( -112 -144 208 ) ( -112 -144 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -112 -144 16 ) ( -112 -64 16 ) ( -128 -64 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -128 -64 208 ) ( -112 -64 208 ) ( -112 -144 208 ) office/Beigewall_Texture 0 0 0 1 1
+( -112 -64 16 ) ( -112 -64 208 ) ( -128 -64 208 ) office/Beigewall_Texture 0 0 0 1 1
+( -112 -144 208 ) ( -112 -64 208 ) ( -112 -64 16 ) office/Beigewall_Texture 0 0 0 1 1
+}
+// brush 9
+{
+( -112 192 16 ) ( -112 193 16 ) ( -112 192 17 ) office/Beigewall_Texture 0 0 0 1 1
+( -112 192 16 ) ( -112 192 17 ) ( -111 192 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -112 192 16 ) ( -111 192 16 ) ( -112 193 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -96 240 112 ) ( -96 241 112 ) ( -95 240 112 ) office/Beigewall_Texture 0 0 0 1 1
+( -96 240 112 ) ( -95 240 112 ) ( -96 240 113 ) office/Beigewall_Texture 0 0 0 1 1
+( -96 240 112 ) ( -96 240 113 ) ( -96 241 112 ) office/Beigewall_Texture 0 0 0 1 1
+}
+// brush 10
+{
+( -144 96 16 ) ( -144 97 16 ) ( -144 96 17 ) office/Beigewall_Texture 0 0 0 1 1
+( -144 96 16 ) ( -144 96 17 ) ( -143 96 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -144 96 16 ) ( -143 96 16 ) ( -144 97 16 ) office/Beigewall_Texture 0 0 0 1 1
+( -64 112 208 ) ( -64 113 208 ) ( -63 112 208 ) office/Beigewall_Texture 0 0 0 1 1
+( -64 112 208 ) ( -63 112 208 ) ( -64 112 209 ) office/Beigewall_Texture 0 0 0 1 1
+( -64 112 208 ) ( -64 112 209 ) ( -64 113 208 ) office/Beigewall_Texture 0 0 0 1 1
 }
 }

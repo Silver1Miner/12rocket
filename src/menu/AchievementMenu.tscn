@@ -50,7 +50,7 @@ margin_bottom = 110.0
 texture = ExtResource( 7 )
 
 [node name="Text" parent="Achievements/AchievementIcon2" index="1"]
-margin_right = 230.0
+margin_right = 224.0
 
 [node name="Title" parent="Achievements/AchievementIcon2/Text" index="0"]
 margin_right = 170.0
@@ -69,7 +69,7 @@ margin_bottom = 170.0
 texture = ExtResource( 6 )
 
 [node name="Text" parent="Achievements/AchievementIcon3" index="1"]
-margin_right = 240.0
+margin_right = 234.0
 
 [node name="Title" parent="Achievements/AchievementIcon3/Text" index="0"]
 margin_right = 180.0
@@ -88,7 +88,7 @@ margin_bottom = 230.0
 texture = ExtResource( 5 )
 
 [node name="Text" parent="Achievements/AchievementIcon4" index="1"]
-margin_right = 390.0
+margin_right = 384.0
 
 [node name="Title" parent="Achievements/AchievementIcon4/Text" index="0"]
 margin_right = 330.0

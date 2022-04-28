@@ -10,7 +10,7 @@ export var speed := 2
 var active = true
 onready var nav = get_parent().get_parent()
 onready var player = $"../../../Player"
-export var hp = 20
+export var hp = 30
 
 signal destroyed()
 

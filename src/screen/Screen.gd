@@ -25,6 +25,7 @@ func _on_ToVideo_pressed() -> void:
 	$CCTV.visible = true
 
 func _on_Messages_new_message() -> void:
+	Music.play_sound("unlock")
 	$Alert.visible = true
 	$ToInbox.texture_normal = preload("res://assets/screen/icons/mail-message-new.png")
 
