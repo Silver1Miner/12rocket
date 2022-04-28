@@ -18,7 +18,7 @@ func _on_Settings_pressed() -> void:
 	$SettingsMenu.visible = true
 
 func _on_Achievements_pressed() -> void:
-	$AchievementMenu.visible = true
+	$AchievementMenu.activate()
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()

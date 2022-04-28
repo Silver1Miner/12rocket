@@ -144,7 +144,20 @@ func _on_Screen_logout() -> void:
 		PlayerData.see_advanced_move = false
 
 func end_game() -> void:
+	if not $SpeedrunTimer.is_stopped():
+		print($SpeedrunTimer.time_left)
+		PlayerData.did_speedrun = true
+	match PlayerData.ending_choice:
+		0:
+			PlayerData.did_elevator = true
+		1:
+			PlayerData.did_paradox = true
+		2:
+			PlayerData.did_rocket = true
+		3:
+			PlayerData.did_rocket = true
 	$HUD.exit_game()
+	PlayerData.save_player_data()
 
 func _on_Screen_advance_knowledge() -> void:
 	PlayerData.ending_choice = 1

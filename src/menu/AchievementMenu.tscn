@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/menu/AchievementMenu.gd" type="Script" id=2]
+[ext_resource path="res://src/menu/AchievementIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/screen/icons/system-log-out.png" type="Texture" id=4]
+[ext_resource path="res://assets/screen/icons/appointment-new.png" type="Texture" id=5]
+[ext_resource path="res://assets/screen/icons/software-update-urgent.png" type="Texture" id=6]
+[ext_resource path="res://assets/screen/icons/user-trash.png" type="Texture" id=7]
 
 [node name="AchievementMenu" type="ColorRect"]
 anchor_right = 1.0
@@ -14,10 +19,84 @@ script = ExtResource( 2 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -72.0
-margin_top = 50.0
+margin_top = 20.0
 margin_right = 72.0
-margin_bottom = 73.0
-text = "Achievements"
+margin_bottom = 43.0
+text = "ACHIEVEMENTS"
+
+[node name="Achievements" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -115.0
+margin_right = 195.0
+margin_bottom = 115.0
+custom_constants/separation = 10
+
+[node name="AchievementIcon" parent="Achievements" instance=ExtResource( 3 )]
+margin_right = 390.0
+
+[node name="Icon" parent="Achievements/AchievementIcon" index="0"]
+texture = ExtResource( 4 )
+
+[node name="AchievementIcon2" parent="Achievements" instance=ExtResource( 3 )]
+margin_top = 60.0
+margin_right = 390.0
+margin_bottom = 110.0
+
+[node name="Icon" parent="Achievements/AchievementIcon2" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Text" parent="Achievements/AchievementIcon2" index="1"]
+margin_right = 230.0
+
+[node name="Title" parent="Achievements/AchievementIcon2/Text" index="0"]
+margin_right = 170.0
+text = "Rocket Ending"
+
+[node name="Description" parent="Achievements/AchievementIcon2/Text" index="1"]
+margin_right = 170.0
+text = "What must be done"
+
+[node name="AchievementIcon3" parent="Achievements" instance=ExtResource( 3 )]
+margin_top = 120.0
+margin_right = 390.0
+margin_bottom = 170.0
+
+[node name="Icon" parent="Achievements/AchievementIcon3" index="0"]
+texture = ExtResource( 6 )
+
+[node name="Text" parent="Achievements/AchievementIcon3" index="1"]
+margin_right = 240.0
+
+[node name="Title" parent="Achievements/AchievementIcon3/Text" index="0"]
+margin_right = 180.0
+text = "Paradox Ending"
+
+[node name="Description" parent="Achievements/AchievementIcon3/Text" index="1"]
+margin_right = 180.0
+text = "He did warn you..."
+
+[node name="AchievementIcon4" parent="Achievements" instance=ExtResource( 3 )]
+margin_top = 180.0
+margin_right = 390.0
+margin_bottom = 230.0
+
+[node name="Icon" parent="Achievements/AchievementIcon4" index="0"]
+texture = ExtResource( 5 )
+
+[node name="Text" parent="Achievements/AchievementIcon4" index="1"]
+margin_right = 390.0
+
+[node name="Title" parent="Achievements/AchievementIcon4/Text" index="0"]
+margin_right = 330.0
+text = "Any%"
+
+[node name="Description" parent="Achievements/AchievementIcon4/Text" index="1"]
+margin_right = 330.0
+text = "Beat the game in under 10 seconds"
 
 [node name="Close" type="Button" parent="."]
 anchor_left = 0.5
@@ -25,10 +104,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -100.0
-margin_top = -100.0
+margin_top = -50.0
 margin_right = 100.0
-margin_bottom = -50.0
 rect_min_size = Vector2( 200, 50 )
 text = "CLOSE"
 
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
+
+[editable path="Achievements/AchievementIcon"]
+[editable path="Achievements/AchievementIcon2"]
+[editable path="Achievements/AchievementIcon3"]
+[editable path="Achievements/AchievementIcon4"]

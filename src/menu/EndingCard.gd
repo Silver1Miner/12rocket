@@ -9,7 +9,10 @@ var ending_cards := [
 
 
 func _ready() -> void:
-	if PlayerData.ending_choice == 1:
+	if PlayerData.ending_choice == 0:
+		$Label.text = "Elevator Ending"
+		$TextureRect.texture = ending_cards[1]
+	elif PlayerData.ending_choice == 1:
 		$Label.text = "Time Paradox Ending"
 		$TextureRect.texture = ending_cards[0]
 	elif PlayerData.ending_choice == 2:
@@ -19,6 +22,8 @@ func _ready() -> void:
 		$Label.text = "Defeat Ending"
 		$TextureRect.texture = ending_cards[2]
 	else:
+		print(PlayerData.ending_choice)
+		push_error("unaccounted for ending")
 		$Label.text = "Elevator Ending"
 		$TextureRect.texture = ending_cards[1]
 	fade_animation.play("fade")

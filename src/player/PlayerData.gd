@@ -1,5 +1,10 @@
 extends Node
 
+var did_elevator = false
+var did_rocket = false
+var did_paradox = false
+var did_speedrun = false
+
 var world = preload("res://src/world/World.tscn")
 var main_menu = preload("res://src/menu/MainMenu.tscn")
 var ending = preload("res://src/menu/EndingCard.tscn")
@@ -16,7 +21,6 @@ var unlocked_doors = [false, false]
 var ending_choice := 0
 var game_route := 2
 var previous_route := 0
-var player_location := Vector3.ZERO
 
 var camera_feed = [
 	preload("res://assets/screen/video/hall-view.PNG"),
@@ -34,6 +38,9 @@ var unlock_codes = [
 	["6174","6174","6174"],
 ]
 
+func _ready() -> void:
+	load_player_data()
+
 func reset() -> void:
 	game_started = false
 	camera2_unlocked = false
@@ -47,3 +54,27 @@ func reset() -> void:
 		game_route += 1
 	else:
 		game_route = 0
+
+func load_player_data() -> void:
+	var save_game = File.new()
+	if not save_game.file_exists("user://rocket.save"):
+		return # Error! We don't have a save to load.
+	save_game.open("user://rocket.save", File.READ)
+	music_db = parse_json(save_game.get_line())
+	sound_db = parse_json(save_game.get_line())
+	did_elevator = parse_json(save_game.get_line())
+	did_rocket = parse_json(save_game.get_line())
+	did_paradox = parse_json(save_game.get_line())
+	did_speedrun = parse_json(save_game.get_line())
+	save_game.close()
+
+func save_player_data() -> void:
+	var save_game = File.new()
+	save_game.open("user://rocket.save", File.WRITE)
+	save_game.store_line(to_json(music_db))
+	save_game.store_line(to_json(sound_db))
+	save_game.store_line(to_json(did_elevator))
+	save_game.store_line(to_json(did_rocket))
+	save_game.store_line(to_json(did_paradox))
+	save_game.store_line(to_json(did_speedrun))
+	save_game.close()
