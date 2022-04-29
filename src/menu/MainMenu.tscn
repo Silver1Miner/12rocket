@@ -200,7 +200,7 @@ anchor_bottom = 1.0
 margin_left = -231.0
 margin_top = -15.0
 custom_fonts/font = SubResource( 6 )
-text = "Copyright (c) 2021 Jack Anderson "
+text = "Copyright (c) 2022 Jack Anderson "
 
 [node name="Version" type="Label" parent="."]
 anchor_left = 1.0
@@ -208,7 +208,7 @@ anchor_right = 1.0
 margin_left = -84.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 6 )
-text = "v0.1.0 Demo "
+text = "v0.2.0 Demo "
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
 visible = false

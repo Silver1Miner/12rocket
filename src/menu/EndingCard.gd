@@ -4,7 +4,8 @@ onready var fade_animation = $Fade/AnimationPlayer
 var ending_cards := [
 	preload("res://assets/ending/message-small.PNG"),
 	preload("res://assets/ending/news-clip.PNG"),
-	preload("res://assets/ending/tragedy.PNG")
+	preload("res://assets/ending/tragedy.PNG"),
+	preload("res://assets/ending/defeat.PNG")
 ]
 
 
@@ -20,7 +21,7 @@ func _ready() -> void:
 		$TextureRect.texture = ending_cards[2]
 	elif PlayerData.ending_choice == 3:
 		$Label.text = "Defeat Ending"
-		$TextureRect.texture = ending_cards[2]
+		$TextureRect.texture = ending_cards[3]
 	else:
 		print(PlayerData.ending_choice)
 		push_error("unaccounted for ending")

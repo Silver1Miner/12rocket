@@ -7,7 +7,7 @@ var moving := true
 var path := PoolVector3Array()
 var path_node := 0
 export var speed := 2
-var active = true
+export var active = true
 onready var nav = get_parent().get_parent()
 onready var player = $"../../../Player"
 export var hp = 30
@@ -23,7 +23,7 @@ func add_outside_force(force: Vector3) -> void:
 	outside_forces += Vector3.UP * 10
 	path_node = 0
 	path = PoolVector3Array()
-	print(outside_forces)
+	#print(outside_forces)
 
 func _physics_process(delta) -> void:
 	var direction = Vector3.ZERO

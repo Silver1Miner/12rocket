@@ -26,3 +26,13 @@ func _on_SignTrigger_body_entered(body: Node) -> void:
 func _on_MannequinTrigger_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		$Props/Mannequin2.visible = true
+
+func _on_GunDesk_interacted() -> void:
+	$AudioCues/ZombieAudio.play()
+	$Doors/DoubleSlidingDoor3.close_double_fast()
+	$Navigation/EnemyManager/Zombie.active = true
+	PlayerData.unlocked_doors[1] = false
+
+func _on_Zombie_destroyed() -> void:
+	PlayerData.ending_choice = 2
+	$Player.end_game()

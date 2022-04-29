@@ -31,6 +31,14 @@ func close_double() -> void:
 	else:
 		$Timer.start()
 
+func close_double_fast() -> void:
+	if not is_closed:
+		moving = true
+		$SlidingDoor/AnimationPlayer.play("close_fast")
+		$SlidingDoor/AudioStreamPlayer3D.play()
+		$SlidingDoor2/AnimationPlayer.play("close_fast")
+		$SlidingDoor/AudioStreamPlayer3D.play()
+
 func _on_Timer_timeout() -> void:
 	close_double()
 

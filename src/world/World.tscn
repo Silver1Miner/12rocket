@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/doors/DoubleSlidingDoor.tscn" type="PackedScene" id=2]
@@ -31,9 +31,14 @@
 [ext_resource path="res://src/world/physicsprops/PhysicsChair.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/signs/320px-Periodic_table.svg.png" type="Texture" id=30]
 [ext_resource path="res://assets/signs/gnome_poster.png" type="Texture" id=31]
-[ext_resource path="res://src/world/physicsprops/PhysicsMannequin.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/characters/Zombie.tscn" type="PackedScene" id=32]
 [ext_resource path="res://src/world/physicsprops/PhysicsTable.tscn" type="PackedScene" id=33]
 [ext_resource path="res://assets/signs/Pie-chart.jpg" type="Texture" id=34]
+[ext_resource path="res://assets/audio/cues/SCREAM.ogg" type="AudioStream" id=35]
+
+[sub_resource type="NavigationMesh" id=97]
+vertices = PoolVector3Array( 7.2, 5.4, 9.5, 14.4, 5.4, 9.5, 14.4, 5.4, 8.9, 14.4, 5.4, -5.8, 14.4, 5.4, -6.4, 7.2, 5.4, -6.4, 15.3, 5.2, 1.4, 15.3, 5.2, -5.5, 14.4, 5.4, -5.8, 7.2, 5.4, -6.4, 14.1429, 5.4, 0.285715, 14.4, 5.4, 8.9, 15.3, 5.2, 8.6, 15.3, 5.2, 1.4, 15.12, 5.2, 2.9, 14.94, 5.4, 4.4, -7.2, 5.4, -6.4, -14.4, 5.4, -6.4, -14.4, 5.4, 1.4, -14.4, 5.4, 1.4, -14.4, 5.4, 9.5, -7.2, 5.4, 9.5, -7.2, 5.4, -6.4, -14.4, 5.4, 1.4, -7.2, 5.4, 9.5, 9.53674e-07, 5.4, 9.5, 9.53674e-07, 5.4, -6.4, 7.2, 5.4, 9.5, 14.4, 5.4, 8.9, 15.3, 5.2, 1.4, 7.2, 5.4, -6.4, 9.53674e-07, 5.4, -6.4, 9.53674e-07, 5.4, 9.5, 14.94, 5.4, 4.4, 15.12, 5.2, 2.9, 14.1429, 5.4, 0.285715, -13.8, 0.4, 1.4, -13.8, 0.4, -5.2, -14.4, 0.4, -5.2, -14.4, 0.4, 1.4, -14.4, 0.4, 1.4, -14.4, 0.4, 8.3, -13.8, 0.4, 8.3, -13.8, 0.4, 1.4, -5.7, 0.4, -2.5, -3.6, 0.4, -2.8, -3.6, 0.4, -5.2, -11.1, 0.4, -5.2, -11.1, 0.4, 4.4, -5.7, 0.4, 4.4, -5.7, 0.4, -2.5, -11.1, 0.4, -5.2, -3.6, 0.4, -5.2, -3.6, 0.4, -2.8, -1.2, 0.4, -2.5, 1.2, 0.4, -2.5, 3.6, 0.4, -2.8, 7.2, 0.4, -5.2, -1.2, 0.4, -2.5, -1.2, 0.4, 1.4, 1.2, 0.4, 1.4, 1.2, 0.4, -2.5, 3.6, 0.4, -2.8, 3.9, 0.4, 4.4, 7.2, 0.4, 4.4, 7.2, 0.4, -5.2, 9.9, 0.4, -5.2, 9.9, 0.4, -2.8, 14.4, 0.4, -2.8, 14.4, 0.4, -5.2, 1.5, 0.4, 7.4, 1.5, 0.4, 4.7, 1.2, 0.4, 3.8, -1.2, 0.4, 3.8, -1.2, 0.4, 8.3, 1.2, 0.4, 8.3, 1.5, 0.4, 4.7, 1.5, 0.4, 7.4, 3.6, 0.4, 7.4, 3.9, 0.4, 4.4, 3.6, 0.4, 7.4, 3.9, 0.4, 8.3, 7.2, 0.4, 8.3, 7.5, 0.4, 7.4, 7.2, 0.4, 4.4, 3.9, 0.4, 4.4, 14.4, 0.4, -0.0999999, 9.9, 0.4, -0.0999999, 9.9, 0.4, 4.4, 14.4, 0.4, 8.3, 9.6, 0.4, 7.4, 9.9, 0.4, 4.4, 7.2, 0.4, 4.4, 7.5, 0.4, 7.4, 9.9, 0.4, 8.3, 14.4, 0.4, 8.3, 9.9, 0.4, 4.4, 9.6, 0.4, 7.4, -11.1, 0.4, 6.8, -11.1, 0.4, 8.3, -5.7, 0.4, 8.3, -5.7, 0.4, 6.8 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 10, 7 ), PoolIntArray( 7, 10, 8 ), PoolIntArray( 8, 10, 9 ), PoolIntArray( 11, 15, 12 ), PoolIntArray( 12, 15, 14 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 22, 26, 23 ), PoolIntArray( 23, 26, 24 ), PoolIntArray( 24, 26, 25 ), PoolIntArray( 29, 34, 35 ), PoolIntArray( 35, 34, 33 ), PoolIntArray( 35, 33, 28 ), PoolIntArray( 35, 28, 27 ), PoolIntArray( 35, 27, 32 ), PoolIntArray( 35, 32, 30 ), PoolIntArray( 30, 32, 31 ), PoolIntArray( 39, 38, 36 ), PoolIntArray( 36, 38, 37 ), PoolIntArray( 43, 42, 40 ), PoolIntArray( 40, 42, 41 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 49, 48, 50 ), PoolIntArray( 50, 48, 51 ), PoolIntArray( 53, 52, 54 ), PoolIntArray( 54, 52, 55 ), PoolIntArray( 55, 52, 56 ), PoolIntArray( 56, 52, 57 ), PoolIntArray( 61, 60, 58 ), PoolIntArray( 58, 60, 59 ), PoolIntArray( 63, 62, 64 ), PoolIntArray( 64, 62, 65 ), PoolIntArray( 69, 68, 66 ), PoolIntArray( 66, 68, 67 ), PoolIntArray( 75, 74, 70 ), PoolIntArray( 70, 74, 71 ), PoolIntArray( 71, 74, 72 ), PoolIntArray( 72, 74, 73 ), PoolIntArray( 77, 76, 78 ), PoolIntArray( 78, 76, 79 ), PoolIntArray( 83, 82, 84 ), PoolIntArray( 84, 82, 81 ), PoolIntArray( 84, 81, 80 ), PoolIntArray( 84, 80, 85 ), PoolIntArray( 87, 86, 88 ), PoolIntArray( 88, 86, 89 ), PoolIntArray( 93, 92, 90 ), PoolIntArray( 90, 92, 91 ), PoolIntArray( 97, 96, 94 ), PoolIntArray( 94, 96, 95 ), PoolIntArray( 101, 100, 98 ), PoolIntArray( 98, 100, 99 ) ]
 
 [sub_resource type="SpatialMaterial" id=2]
 
@@ -213,7 +218,19 @@ script = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 rocket_limit = true
 
-[node name="QodotMap" type="Spatial" parent="."]
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="EnemyManager" type="Spatial" parent="Navigation"]
+
+[node name="Zombie" parent="Navigation/EnemyManager" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59276, 0, 4.16828 )
+speed = 1
+active = false
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 97 )
+
+[node name="QodotMap" type="Spatial" parent="Navigation/NavigationMeshInstance"]
 script = ExtResource( 3 )
 map_file = "C:/Users/User/Documents/12Games/12rocket/maps/test.map"
 inverse_scale_factor = 16.0
@@ -232,9 +249,9 @@ use_trenchbroom_group_hierarchy = false
 tree_attach_batch_size = 16
 set_owner_batch_size = 16
 
-[node name="entity_0_worldspawn" type="StaticBody" parent="QodotMap"]
+[node name="entity_0_worldspawn" type="StaticBody" parent="Navigation/NavigationMeshInstance/QodotMap"]
 
-[node name="entity_0_mesh_instance" type="MeshInstance" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_mesh_instance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 use_in_baked_light = true
 mesh = SubResource( 67 )
 material/0 = null
@@ -243,88 +260,88 @@ material/2 = null
 material/3 = null
 material/4 = null
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 68 )
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 69 )
 
-[node name="entity_0_brush_2_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 70 )
 
-[node name="entity_0_brush_3_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 71 )
 
-[node name="entity_0_brush_4_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 72 )
 
-[node name="entity_0_brush_5_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_5_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 73 )
 
-[node name="entity_0_brush_6_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_6_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 74 )
 
-[node name="entity_0_brush_7_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_7_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 75 )
 
-[node name="entity_0_brush_8_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_8_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 76 )
 
-[node name="entity_0_brush_9_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_9_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 77 )
 
-[node name="entity_0_brush_10_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_10_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 78 )
 
-[node name="entity_0_brush_11_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_11_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 79 )
 
-[node name="entity_0_brush_12_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_12_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 80 )
 
-[node name="entity_0_brush_13_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_13_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 81 )
 
-[node name="entity_0_brush_14_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_14_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 82 )
 
-[node name="entity_0_brush_15_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_15_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 83 )
 
-[node name="entity_0_brush_16_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_16_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 84 )
 
-[node name="entity_0_brush_17_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_17_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 85 )
 
-[node name="entity_0_brush_18_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_18_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 86 )
 
-[node name="entity_0_brush_19_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_19_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 87 )
 
-[node name="entity_0_brush_20_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_20_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 88 )
 
-[node name="entity_0_brush_21_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_21_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 89 )
 
-[node name="entity_0_brush_22_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_22_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 90 )
 
-[node name="entity_0_brush_23_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_23_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 91 )
 
-[node name="entity_0_brush_24_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_24_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 92 )
 
-[node name="entity_0_brush_25_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_25_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 93 )
 
-[node name="entity_0_brush_26_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_26_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 94 )
 
-[node name="entity_0_brush_27_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_27_collision_shape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/QodotMap/entity_0_worldspawn"]
 shape = SubResource( 95 )
 
 [node name="Lights" type="Spatial" parent="."]
@@ -365,6 +382,9 @@ requires_key = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0, -4 )
 requires_key = true
 door_id = 1
+
+[node name="Timer" parent="Doors/DoubleSlidingDoor3" index="3"]
+wait_time = 0.1
 
 [node name="DoubleSlidingDoor2" parent="Doors" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 6 )
@@ -458,7 +478,7 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 11.5, 0, 8.096 )
 transform = Transform( 2, 0, 0, 0, 3, 0, 0, 0, 4, 14, 0, 8.252 )
 
 [node name="GunDesk" parent="Props" instance=ExtResource( 7 )]
-transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -10, 0, -5 )
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -11, 0, -5 )
 
 [node name="Chair" parent="Props" instance=ExtResource( 22 )]
 transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 10.177, 0, -0.251814 )
@@ -481,11 +501,15 @@ transform = Transform( 4.34734, -1.88246, 3.68198, 0, 5.34228, 2.73131, -4.1353,
 [node name="Camera2" parent="Props" instance=ExtResource( 25 )]
 transform = Transform( -4.65007, -1.72604, 3.37603, 0, 5.34228, 2.73131, -3.79168, 2.1168, -4.14033, 7.94952, 3.77481, -5.91292 )
 
+[node name="Camera3" parent="Props" instance=ExtResource( 25 )]
+transform = Transform( -4.65007, -1.72604, 3.37603, 0, 5.34228, 2.73131, -3.79168, 2.1168, -4.14033, 2.07705, 3.90949, 2.92884 )
+
 [node name="AudioCues" type="Spatial" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioCues"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4566, 2.91428, 0 )
 stream = ExtResource( 28 )
+unit_db = 1.0
 autoplay = true
 
 [node name="AudioCue" parent="AudioCues" instance=ExtResource( 10 )]
@@ -507,10 +531,11 @@ audio_id = 3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290225, 0, 3.60665 )
 audio_id = 4
 
-[node name="PhysicsProps" type="Spatial" parent="."]
+[node name="ZombieAudio" type="AudioStreamPlayer3D" parent="AudioCues"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49935, 1.83112, 4.20253 )
+stream = ExtResource( 35 )
 
-[node name="PhysicsMannequin" parent="PhysicsProps" instance=ExtResource( 32 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, 3 )
+[node name="PhysicsProps" type="Spatial" parent="."]
 
 [node name="PhysicsTable" parent="PhysicsProps" instance=ExtResource( 33 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89193, -0.00634027, 3.13599 )
@@ -557,8 +582,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15466, 0, 6.10421 )
 [node name="CollisionShape" type="CollisionShape" parent="MannequinTrigger"]
 shape = SubResource( 96 )
 
+[connection signal="destroyed" from="Navigation/EnemyManager/Zombie" to="." method="_on_Zombie_destroyed"]
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="StartTrigger" to="." method="_on_StartTrigger_body_entered"]
+[connection signal="interacted" from="Props/GunDesk" to="." method="_on_GunDesk_interacted"]
 [connection signal="body_entered" from="SignTrigger" to="." method="_on_SignTrigger_body_entered"]
 [connection signal="body_entered" from="SignTrigger2" to="." method="_on_SignTrigger_body_entered"]
 [connection signal="body_entered" from="MannequinTrigger" to="." method="_on_MannequinTrigger_body_entered"]
+
+[editable path="Doors/DoubleSlidingDoor3"]
+[editable path="Doors/DoubleSlidingDoor3/SlidingDoor"]

@@ -33,5 +33,6 @@ var effects := {
 	"logoff": preload("res://assets/audio/effects/off.ogg"),
 	"switch": preload("res://assets/audio/effects/switch10.ogg"),
 	"error": preload("res://assets/audio/effects/error_007.ogg"),
-	"unlock": preload("res://assets/audio/effects/confirmation_004.ogg")
+	"unlock": preload("res://assets/audio/effects/confirmation_004.ogg"),
+	"ping": preload("res://assets/audio/effects/zap1.ogg")
 }

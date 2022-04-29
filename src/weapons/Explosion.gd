@@ -22,7 +22,6 @@ func _on_Area_body_entered(body: Node) -> void:
 				body.add_outside_force(vector * 10)
 			else:
 				body.add_outside_force(vector * 2)
-		#print(vector * 10)
 	if body.has_method("apply_impulse"):
 		var pos = get_global_transform().origin
 		var vector = body.get_global_transform().origin - pos

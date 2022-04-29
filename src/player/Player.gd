@@ -164,28 +164,34 @@ func _on_Screen_advance_knowledge() -> void:
 	end_game()
 
 func play_audio_cue(audio_id) -> void:
-	$Cue.stream = audio_cues[audio_id]
-	$Cue.play()
+	if not $Cue.playing:
+		$Cue.stream = audio_cues[audio_id]
+		$Cue.play()
 
 var audio_cues = [
 	preload("res://assets/audio/cues/footstep00.ogg"),
 	preload("res://assets/audio/cues/gasp1.ogg"),
 	preload("res://assets/audio/cues/laugh1.ogg"),
 	preload("res://assets/audio/cues/scared-breathing.ogg"),
-	preload("res://assets/audio/cues/freakedbreath.ogg")
+	preload("res://assets/audio/cues/freakedbreath.ogg"),
+	preload("res://assets/audio/effects/confirmation_004.ogg"),
+	preload("res://assets/audio/effects/shotguncock.wav")
 ]
 
 func take_damage(damage: int) -> void:
 	hp = clamp(hp - damage, 0, 100)
 	$HUD.update_hp(hp)
+	play_audio_cue(4)
 	if hp <= 0:
 		PlayerData.ending_choice = 3
 		end_game()
 
 func restore_health(health: int) -> void:
 	hp = clamp(hp + health, 0, 100)
+	play_audio_cue(5)
 	$HUD.update_hp(hp)
 
 func restore_ammo(value: int) -> void:
 	$Pivot/RocketLauncher.ammo = clamp($Pivot/RocketLauncher.ammo + value, 0, 20)
 	$HUD.update_ammo($Pivot/RocketLauncher.ammo)
+	play_audio_cue(6)

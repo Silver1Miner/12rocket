@@ -41,6 +41,16 @@ margin_right = 390.0
 [node name="Icon" parent="Achievements/AchievementIcon" index="0"]
 texture = ExtResource( 4 )
 
+[node name="Text" parent="Achievements/AchievementIcon" index="1"]
+margin_right = 254.0
+
+[node name="Title" parent="Achievements/AchievementIcon/Text" index="0"]
+margin_right = 200.0
+
+[node name="Description" parent="Achievements/AchievementIcon/Text" index="1"]
+margin_right = 200.0
+text = "What did you expect?"
+
 [node name="AchievementIcon2" parent="Achievements" instance=ExtResource( 3 )]
 margin_top = 60.0
 margin_right = 390.0
