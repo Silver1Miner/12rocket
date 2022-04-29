@@ -12,6 +12,8 @@ onready var nav = get_parent().get_parent()
 onready var player = $"../../../Player"
 export var hp = 30
 
+export (PackedScene) var ragdoll = preload("res://src/world/physicsprops/PhysicsMannequin.tscn")
+
 signal destroyed()
 
 func _ready() -> void:
@@ -52,6 +54,9 @@ func take_damage(damage: int) -> void:
 	hp = clamp(hp - damage, 0, 20)
 	if hp <= 0:
 		emit_signal("destroyed")
+		var rag_instance = ragdoll.instance()
+		nav.add_child(rag_instance)
+		rag_instance.global_transform.origin = global_transform.origin
 		queue_free()
 
 func attack_damage() -> void:

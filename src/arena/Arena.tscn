@@ -143,19 +143,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, -12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 8, 0 )
 
 [node name="PickupAmmo4" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 8, 0 )
 
 [node name="PickupAmmo2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -1 )
 
 [node name="PickupAmmo3" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.019, 1, -12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="PhysicsChair" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71975, 1.40964, -6.08321 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.97309 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 2, -1.973 )
 has_rocket_launcher = true
 
 [node name="Navigation" type="Navigation" parent="."]
