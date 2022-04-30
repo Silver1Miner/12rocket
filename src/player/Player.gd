@@ -4,7 +4,7 @@ onready var _raycast = $Pivot/RayCast
 onready var camera = $Pivot/Camera
 var gravity = -30
 var max_speed = 4
-var sprint_multiplier = 2.5
+var sprint_multiplier = 3
 var mouse_sensitivity = 0.002
 var velocity = Vector3()
 var is_jumping = false
@@ -16,6 +16,7 @@ var outside_forces: Vector3
 export var hp = 100
 export var ammo = 10
 export var rocket_limit = false
+export var sprint = 100
 
 func _ready() -> void:
 	if !in_screen:
@@ -89,7 +90,12 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
 	if is_sprinting:
-		desired_velocity *= sprint_multiplier
+		if sprint > 0:
+			desired_velocity *= sprint_multiplier
+		sprint = clamp(sprint - 2, 0, 100)
+	else:
+		sprint = clamp(sprint + 1, 0, 100)
+	$HUD.update_sprint(sprint)
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity += outside_forces

@@ -33,7 +33,7 @@
 [ext_resource path="res://assets/signs/gnome_poster.png" type="Texture" id=31]
 [ext_resource path="res://src/characters/Zombie.tscn" type="PackedScene" id=32]
 [ext_resource path="res://src/world/physicsprops/PhysicsTable.tscn" type="PackedScene" id=33]
-[ext_resource path="res://assets/signs/Pie-chart.jpg" type="Texture" id=34]
+[ext_resource path="res://src/world/signs/Sign.tscn" type="PackedScene" id=34]
 [ext_resource path="res://assets/audio/cues/SCREAM.ogg" type="AudioStream" id=35]
 
 [sub_resource type="NavigationMesh" id=97]
@@ -422,10 +422,11 @@ texture = ExtResource( 15 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.4, -2.016 )
 texture = ExtResource( 14 )
 
-[node name="LoungePoster" type="Sprite3D" parent="Signs"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.98131, 1.76808, 4.99634 )
-modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
-texture = ExtResource( 34 )
+[node name="LoungePoster" parent="Signs" instance=ExtResource( 34 )]
+prop_description = "Some sort of presentation chart"
+
+[node name="Poster" parent="Signs/LoungePoster" index="0"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
 
 [node name="OfficePoster" type="Sprite3D" parent="Signs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93771, 3.01606 )
@@ -592,3 +593,4 @@ shape = SubResource( 96 )
 
 [editable path="Doors/DoubleSlidingDoor3"]
 [editable path="Doors/DoubleSlidingDoor3/SlidingDoor"]
+[editable path="Signs/LoungePoster"]

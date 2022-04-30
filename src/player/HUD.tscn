@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/screen/Screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/player/HUD.gd" type="Script" id=3]
 [ext_resource path="res://src/player/Pause.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/hud/crosshair007.png" type="Texture" id=5]
+[ext_resource path="res://assets/hud/progress-bar-fill.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=2]
 resource_name = "MoveAdvanceFade"
@@ -348,6 +349,15 @@ anims/heal_flash = SubResource( 7 )
 
 [node name="Screen" parent="." instance=ExtResource( 2 )]
 visible = false
+
+[node name="SprintProgress" type="TextureProgress" parent="."]
+modulate = Color( 1, 1, 1, 0.666667 )
+margin_left = 21.0
+margin_top = 338.0
+margin_right = 149.0
+margin_bottom = 370.0
+value = 100.0
+texture_progress = ExtResource( 6 )
 
 [node name="Pause" parent="." instance=ExtResource( 4 )]
 visible = false

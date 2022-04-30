@@ -1,6 +1,6 @@
 extends Spatial
 
-export var projectile_speed = 10
+export var projectile_speed = 12
 export var explosion = preload("res://src/weapons/Explosion.tscn")
 var timer = 0
 var kill_timer = 8

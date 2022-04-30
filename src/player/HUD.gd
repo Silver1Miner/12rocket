@@ -43,3 +43,10 @@ func update_hp(hp: int) -> void:
 
 func update_ammo(ammo: int) -> void:
 	$Combat/Ammo.text = str(ammo)
+
+func update_sprint(sprint) -> void:
+	$SprintProgress.value = sprint
+	if sprint == 100:
+		$SprintProgress.visible = false
+	else:
+		$SprintProgress.visible = true
